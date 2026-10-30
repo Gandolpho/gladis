@@ -1,0 +1,72 @@
+filters:
+  and:
+    - 'tipo == "projeto"'
+    - 'file.inFolder("GLADIS")'
+    - '!file.inFolder("GLADIS/70 🧩 Templates")'
+properties:
+  file.name:
+    displayName: Projeto
+  note.status:
+    displayName: Status
+  note.contexto:
+    displayName: Contexto
+  note.prazo:
+    displayName: Prazo
+  note.proxima_acao:
+    displayName: Próxima ação
+  note.valor_portfolio:
+    displayName: Valor de portfólio
+views:
+  - type: cards
+    name: Cartões
+    filters:
+      and:
+        - 'status != "concluído"'
+        - '!file.inFolder("GLADIS/90 📦 Arquivo")'
+    order:
+      - file.name
+      - contexto
+      - proxima_acao
+      - prazo
+  - type: table
+    name: Ativos
+    filters:
+      and:
+        - 'status != "concluído"'
+        - '!file.inFolder("GLADIS/90 📦 Arquivo")'
+    order:
+      - file.name
+      - status
+      - contexto
+      - prazo
+      - proxima_acao
+      - valor_portfolio
+    sort:
+      - property: prazo
+        direction: ASC
+  - type: table
+    name: Por contexto
+    filters:
+      and:
+        - 'status != "concluído"'
+        - '!file.inFolder("GLADIS/90 📦 Arquivo")'
+    groupBy:
+      property: contexto
+      direction: ASC
+    order:
+      - file.name
+      - status
+      - prazo
+      - proxima_acao
+      - valor_portfolio
+  - type: table
+    name: Arquivados
+    filters:
+      or:
+        - 'status == "concluído"'
+        - 'file.inFolder("GLADIS/90 📦 Arquivo")'
+    order:
+      - file.name
+      - status
+      - contexto
+      - valor_portfolio

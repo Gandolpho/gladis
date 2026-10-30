@@ -1,0 +1,56 @@
+<!doctype html><meta charset="utf-8"><title>Gerador de textura</title>
+<body style="font:14px sans-serif;background:#FDFBF4;color:#5A1830;padding:16px"><div id="st">pronto</div><div id="prev" style="margin-top:12px"></div>
+<script>
+const TONS={chiclete:'#F2609F',goiaba:'#FF6B4A',algodao:'#FFC2E2',pessego:'#FFB59E',pervinca:'#8FA6F2'};
+const MAXLADO=640,PAD=14;
+function rng(seed){let s=seed>>>0;return()=>{s=(s+0x6D2B79F5)>>>0;let t=s;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return((t^t>>>14)>>>0)/4294967296}}
+const hash=s=>{let h=2166136261;for(const c of s){h^=c.charCodeAt(0);h=Math.imul(h,16777619)}return h>>>0};
+const kebab=s=>s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/\s+/g,'-');
+const hex=h=>[1,3,5].map(i=>parseInt(h.substr(i,2),16));
+function loadImg(src){return new Promise((ok,er)=>{const i=new Image();i.onload=()=>ok(i);i.onerror=er;i.src=src})}
+function lowfreq(W,H,R,celulas){const c=document.createElement('canvas');c.width=celulas;c.height=Math.max(2,Math.round(celulas*H/W));const x=c.getContext('2d');const d=x.createImageData(c.width,c.height);for(let i=0;i<d.data.length;i+=4){const v=Math.floor(R()*255);d.data[i]=d.data[i+1]=d.data[i+2]=v;d.data[i+3]=255}x.putImageData(d,0,0);
+ const o=document.createElement('canvas');o.width=W;o.height=H;const ox=o.getContext('2d');ox.imageSmoothingEnabled=true;ox.imageSmoothingQuality='high';ox.drawImage(c,0,0,W,H);return ox.getImageData(0,0,W,H).data}
+async function textura(svgTxt,tom,seed){
+  const R=rng(seed);const cor=hex(TONS[tom]);
+  const svg=svgTxt.replace(/(fill|stroke)="#[0-9a-fA-F]{6}"/g,'$1="'+TONS[tom]+'"');
+  const img=await loadImg('data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg));
+  const sc=MAXLADO/Math.max(img.width,img.height);const w=Math.round(img.width*sc),h=Math.round(img.height*sc),W=w+PAD*2,H=h+PAD*2;
+  const base=document.createElement('canvas');base.width=W;base.height=H;const bx=base.getContext('2d');bx.drawImage(img,PAD,PAD,w,h);
+  const bl=document.createElement('canvas');bl.width=W;bl.height=H;const lx=bl.getContext('2d');lx.filter='blur(2.4px)';lx.drawImage(base,0,0);
+  const A=lx.getImageData(0,0,W,H).data,B=bx.getImageData(0,0,W,H).data;
+  const L1=lowfreq(W,H,R,10),L2=lowfreq(W,H,R,34),L3=lowfreq(W,H,R,120);
+  const out=document.createElement('canvas');out.width=W;out.height=H;const ox=out.getContext('2d');const D=ox.createImageData(W,H);const d=D.data;
+  for(let i=0;i<d.length;i+=4){
+    let a=A[i+3]/255;const n3=(L3[i]/255-.5);
+    a=a+(R()-.5)*.30+n3*.22;
+    const t=Math.min(1,Math.max(0,(a-.40)/.22));const aa=t*t*(3-2*t);
+    if(aa<=0){d[i+3]=0;continue}
+    const m=(L1[i]/255-.5)*.17+(L2[i]/255-.5)*.12;const g=(R()-.5)*.13;const f=1+m+g;
+    d[i]=Math.max(0,Math.min(255,cor[0]*f));d[i+1]=Math.max(0,Math.min(255,cor[1]*f));d[i+2]=Math.max(0,Math.min(255,cor[2]*f));
+    d[i+3]=Math.round(aa*255)}
+  ox.putImageData(D,0,0);
+  // fibras de papel, só dentro da forma
+  const fib=document.createElement('canvas');fib.width=W;fib.height=H;const fx=fib.getContext('2d');fx.lineCap='round';
+  const n=Math.round(W*H/900);
+  for(let k=0;k<n;k++){const x=R()*W,y=R()*H,len=6+R()*22,ang=R()*Math.PI*2;fx.strokeStyle=R()<.55?'rgba(255,255,255,'+(.10+R()*.12)+')':'rgba(90,24,48,'+(.05+R()*.07)+')';fx.lineWidth=.6+R()*.9;fx.beginPath();fx.moveTo(x,y);fx.quadraticCurveTo(x+Math.cos(ang+.7)*len*.5,y+Math.sin(ang+.7)*len*.5,x+Math.cos(ang)*len,y+Math.sin(ang)*len);fx.stroke()}
+  ox.globalCompositeOperation='source-atop';ox.drawImage(fib,0,0);ox.globalCompositeOperation='source-over';
+  return out}
+function blob(c,tipo,q){return new Promise(r=>c.toBlob(r,tipo,q))}
+async function salvar(rel,b){const r=await fetch('/save?path='+encodeURIComponent(rel),{method:'POST',body:b});if(!r.ok)throw new Error('save '+rel)}
+async function thumb(c,lado){const t=document.createElement('canvas');const s=lado/Math.max(c.width,c.height);t.width=Math.round(c.width*s);t.height=Math.round(c.height*s);const x=t.getContext('2d');x.imageSmoothingQuality='high';x.drawImage(c,0,0,t.width,t.height);return blob(t,'image/webp',.85)}
+window.testar=async nome=>{const txt=await (await fetch('/el/'+encodeURIComponent(nome))).text();const c=await textura(txt,'chiclete',hash(nome+'chiclete'));document.getElementById('prev').appendChild(c);c.style.cssText='max-width:360px;background:#FDFBF4';const b=await blob(c,'image/png');return c.width+'x'+c.height+' '+Math.round(b.size/1024)+'KB'};
+window.gerarTudo=async(tons)=>{const lista=await (await fetch('/list')).json();let n=0,tot=lista.length*tons.length;const st=document.getElementById('st');
+  for(const f of lista){const nome=f.replace(/\.svg$/i,'');const txt=await (await fetch('/el/'+encodeURIComponent(f))).text();
+    for(const tom of tons){const c=await textura(txt,tom,hash(nome+tom));const slug=kebab(nome)+'-'+tom;
+      await salvar('Textura/'+slug+'.png',await blob(c,'image/png'));await salvar('thumbs/'+slug+'.webp',await thumb(c,120));n++;st.textContent='gerados '+n+' de '+tot}}
+  window.__fim=true;st.textContent='fim: '+n};
+window.overlays=async()=>{const defs=[['grao-papel-leve',{claro:false,grao:.07,fib:.35,man:.035}],['grao-papel-marcado',{claro:false,grao:.13,fib:1,man:.06}],['grao-claro',{claro:true,grao:.10,fib:.7,man:.05}]];const W=1080,H=1350;
+  for(const [nome,o] of defs){const R=rng(hash(nome));const c=document.createElement('canvas');c.width=W;c.height=H;const x=c.getContext('2d');const D=x.createImageData(W,H);const d=D.data;const L1=lowfreq(W,H,R,8),L2=lowfreq(W,H,R,40);
+    for(let i=0;i<d.length;i+=4){const m=(L1[i]/255-.5)*o.man+(L2[i]/255-.5)*o.man*.8;const g=(R()-.5)*o.grao*2;const v=o.claro?255:20;const alpha=Math.max(0,Math.min(1,.5*Math.abs(g)+Math.max(0,m*(o.claro?-1:1))));d[i]=d[i+1]=d[i+2]=v;d[i+3]=Math.round(alpha*255*(g>0||m>0?1:.6))}
+    x.putImageData(D,0,0);
+    const nf=Math.round(W*H/1500*o.fib);x.lineCap='round';for(let k=0;k<nf;k++){const px=R()*W,py=R()*H,len=8+R()*30,ang=R()*Math.PI*2;x.strokeStyle=o.claro?'rgba(255,255,255,'+(.10+R()*.12)+')':'rgba(60,20,30,'+(.05+R()*.07)+')';x.lineWidth=.7+R()*1;x.beginPath();x.moveTo(px,py);x.quadraticCurveTo(px+Math.cos(ang+.7)*len*.5,py+Math.sin(ang+.7)*len*.5,px+Math.cos(ang)*len,py+Math.sin(ang)*len);x.stroke()}
+    await salvar('Textura/'+nome+'.png',await blob(c,'image/png'));
+    const p=document.createElement('canvas');p.width=270;p.height=338;const px=p.getContext('2d');px.fillStyle=o.claro?'#5A1830':'#FDFBF4';px.fillRect(0,0,270,338);px.imageSmoothingQuality='high';px.drawImage(c,0,0,270,338);
+    await salvar('thumbs/'+nome+'.webp',await blob(p,'image/webp',.85))}
+  window.__fimOv=true;document.getElementById('st').textContent='overlays prontos'};
+</script>

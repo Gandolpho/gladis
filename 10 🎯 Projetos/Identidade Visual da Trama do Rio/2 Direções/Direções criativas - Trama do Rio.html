@@ -1,0 +1,562 @@
+<title>Direções criativas da Trama do Rio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Permanent+Marker&family=Shrikhand&family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,900;1,9..144,500&family=Covered+By+Your+Grace&family=DM+Sans:wght@400;500;700&family=Figtree:wght@400;600;800&family=Work+Sans:wght@400;500;700&family=Bricolage+Grotesque:wght@600;800&family=Hanken+Grotesk:wght@400;500;700&display=swap">
+<style>
+/* Layout: página de apresentação para as meninas. Casca neutra e fria (tokens --bg/--fg), cada rota é um "palco" com a própria paleta, fixa nos dois temas. */
+:root{
+  --bg:#F1F0F5; --fg:#1B1922; --mute:#5E5A6B; --line:#D7D4E0; --card:#FFFFFF; --chip:#E6E3EE;
+  --head:'Bricolage Grotesque','Arial Black',sans-serif; --body:'Hanken Grotesk',system-ui,sans-serif;
+  --logo:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAa0AAAGtCAYAAAClVis3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAADWASURBVHhe7d1bkuW4bgXQmv9A29d2RXgIduCWGcXc4BMESUjaHyu6GynxJYoQdU5m//r169f/EhERPYQKEBERRaUCREREUakAERFRVCpAREQUlQoQERFFpQJERERRqQAREVFUKkBERBSVChAREUWlAkRERFGpABERUVQqQEREFJUKEBERRaUCREREUakAERFRVCpAREQUlQoQERFFpQJERERRqQAREVFUKkBERBSVChAREUWlAkRERFGpABERUVQqQEREFJUKEBERRaUCREREUakAERFRVCpAREQUlQoQERFFpQJERERRqQAREVFUKkBERBSVChAREUWlAkRERFGpABERUVQqQEREFJUKEBERRaUCREREUakAERFRVCpAREQUlQoQERFFpQJERERRqQAREVFUKkBERBSVChAREUWlAkRERFGpABERUVQqQEREFJUKEBERRaUCREREUakArfmvX79+/evXr1//CVJM/vkfhfO+TMZDxk3+KWrjd3rcUnukbakNUa9j3s58zHAs/6dw7ttIH/P+y7gIPO60vF2taxRpXkWkAmSHi8aICDfTTnKjpoSUFpDUd7xZR+wer9Li37O7TT3SZmxTS7oO3otjakeeLOS/vevpaV2/Hf0ekRLWjFttjU4FyGZ24Sh58gRNuxLs0w5Y9ypZUEpPvLNu7WJW2p2SC5ZpgWWjE4sw1tmyuy05rHtGuka35lc0KkA2ONFWeC0iO8iNk3ZN2O6TsF0WlqfflhsLS2tXMWul/TMPLJ6JMjfThtyOtuSs7ao5mWwjUgGa5z0pE6znhpSk5Ma+naiSlcU18Vzsc7sXQIT1r7K23zqe1vpKsOxZnm3JYT0eVuf/k6kAzbPesD23J+aufnmwLjAndon/Xah3h10PSzI+WFcPljFrda577po9dzK7rpF1/r+BCtA8nFBebk9MbE8ks2NzIlkl0jbPha8G6/WEdfXg+bNmryfyfsDyun5Yries6ytUgObsepJKsL6TsC3RjO5o8LwTVhfhnp3zztJ2LMPCssNLvB9ILGNQguV6wrq+QgVoDk4kb1jfSZIUsD3RYJuR9xP4jNGk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");
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#15131B;--fg:#EEECF4;--mute:#A7A2B8;--line:#34303F;--card:#1E1B27;--chip:#2B2736;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#15131B;--fg:#EEECF4;--mute:#A7A2B8;--line:#34303F;--card:#1E1B27;--chip:#2B2736;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.55}
+.wrap{max-width:1180px;margin-inline:auto;padding-inline:20px;padding-block:28px 72px}
+h1,h2,h3{font-family:var(--head);line-height:1.05;text-wrap:balance;margin:0}
+h1{font-size:clamp(2rem,6vw,3.6rem);font-weight:800;letter-spacing:-.02em}
+h2{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:800;letter-spacing:-.01em}
+h3{font-size:1.15rem;font-weight:800;margin-bottom:10px}
+p{margin:0 0 .8em;max-width:68ch}
+.eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.lead{font-size:1.1rem;color:var(--mute)}
+nav.top{display:flex;gap:8px;flex-wrap:wrap;margin-block:18px 8px}
+nav.top a{padding:8px 14px;border-radius:99px;background:var(--chip);color:var(--fg);text-decoration:none;font-weight:700;font-size:.9rem}
+nav.top a:focus-visible,nav.top a:hover{outline:2px solid var(--fg)}
+.tablewrap{overflow-x:auto;margin-block:18px}
+table{border-collapse:collapse;min-width:720px;width:100%;font-size:.93rem}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+.note{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-block:18px}
+.note p:last-child{margin:0}
+section.route{margin-top:64px;padding-top:28px;border-top:2px solid var(--fg)}
+.sub{display:grid;gap:28px;margin-top:34px}
+.sub > h3{margin:0}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px;align-items:start}
+.cols > *{min-width:0}
+.pal{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px}
+.sw{border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--card);font-size:.8rem}
+.sw i{display:block;height:64px}
+.sw b{display:block;padding:6px 8px 0}
+.sw span{display:block;padding:0 8px 8px;color:var(--mute);font-variant-numeric:tabular-nums}
+.combos{display:flex;flex-wrap:wrap;gap:10px}
+.combo{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:12px;font-weight:700;font-size:.9rem;min-width:0}
+.specimen{border-radius:16px;padding:20px;overflow:hidden;min-width:0}
+.specimen small{display:block;font-family:var(--body);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;opacity:.75;margin-bottom:6px}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:.92rem}
+.kv dt{font-weight:700}.kv dd{margin:0;color:var(--mute)}
+ul.tight{margin:0;padding-left:1.1em}ul.tight li{margin-bottom:.4em}
+.lock{border-radius:14px;padding:16px;border:1px solid var(--line);background:var(--card)}
+.lock h4{margin:0 0 8px;font-family:var(--head);font-size:1rem}
+.pill{display:inline-block;padding:2px 10px;border-radius:99px;background:var(--chip);font-size:.78rem;font-weight:700;margin-right:6px}
+.posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:22px}
+.pcap{font-size:.85rem;color:var(--mute);margin-top:8px}
+.rec{border:2px solid var(--fg);border-radius:18px;padding:22px;margin-top:28px;background:var(--card)}
+
+/* ===== peças (artes) ===== */
+.post{container-type:inline-size;aspect-ratio:4/5;position:relative;overflow:hidden;width:100%;max-width:100%;border-radius:4px;box-shadow:0 1px 0 rgba(0,0,0,.08)}
+.post *{box-sizing:border-box}
+.abs{position:absolute}
+.ph{background:repeating-linear-gradient(135deg,rgba(0,0,0,.16) 0 .8cqw,rgba(0,0,0,0) .8cqw 1.6cqw),#9a948f;display:flex;align-items:flex-end;justify-content:flex-start;color:#fff;font:700 2.2cqw/1 'DM Sans',sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:1.2cqw}
+.cover{background:linear-gradient(172deg,#0c1c19,#1c4a3e 58%,#0c1c19);color:#d6b56a;display:flex;flex-direction:column;justify-content:flex-end;padding:7%;gap:2%;aspect-ratio:2/3}
+.cover i{font:italic 500 7.4cqw/1 'Fraunces',serif}
+.cover b{font:700 3.6cqw/1.1 'DM Sans',sans-serif;letter-spacing:.14em}
+.cover em{font:normal 400 1.9cqw/1 'DM Sans',sans-serif;opacity:.7;letter-spacing:.08em}
+.logo{position:relative;aspect-ratio:1;width:100%}
+.logo span{position:absolute;inset:0;background:var(--c1);-webkit-mask:var(--logo) center/contain no-repeat;mask:var(--logo) center/contain no-repeat}
+.logo .l1{clip-path:inset(0 0 68% 0)}
+.logo .l2{background:var(--c2);clip-path:inset(33% 12% 51% 64%)}
+.logo .l3{background:var(--c3);clip-path:polygon(0 32%,64% 32%,64% 49%,88% 49%,88% 32%,100% 32%,100% 100%,0 100%)}
+svg.g{display:block;width:100%;height:100%}
+.logotiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.logotile{border-radius:14px;padding:18px;display:grid;gap:8px;font-size:.78rem;font-weight:700;min-width:0}
+.logotile .logo{max-width:140px;margin-inline:auto}
+
+/* ===== ROTA B · Edição Extra ===== */
+.rb{--ink:#1E1824;--paper:#F3E9D2;--p1:#E62E7B;--p2:#C7E83B;--p3:#FF6A2B;--p4:#B8A2FF;--p5:#5E1633}
+.rb .post{background:var(--paper);color:var(--ink);font-family:'DM Sans',sans-serif}
+.rb .dots{background-image:radial-gradient(circle,rgba(30,24,36,.16) .5cqw,transparent .7cqw);background-size:3.2cqw 3.2cqw}
+.rb .strip{left:0;right:0;top:0;height:7%;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:space-between;padding-inline:4cqw;font-weight:700;font-size:2.5cqw;letter-spacing:.1em;text-transform:uppercase}
+.rb .hl{font-family:'Bowlby One',sans-serif;line-height:.98;text-transform:uppercase}
+.rb .mark{background:var(--p2);padding:0 1.4cqw;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.rb .marker{font-family:'Permanent Marker',cursive}
+.rb .bubble{background:#fff;border:.6cqw solid var(--ink);border-radius:4cqw;padding:2.6cqw 3cqw;font-family:'Permanent Marker',cursive;font-size:3.6cqw;line-height:1.15;color:var(--ink)}
+.rb .bubble::after{content:"";position:absolute;left:12%;bottom:-3.6cqw;width:4cqw;height:4cqw;background:#fff;border-right:.6cqw solid var(--ink);border-bottom:.6cqw solid var(--ink);transform:skewY(30deg) rotate(0deg)}
+.rb .tape{background:rgba(230,46,123,.72);width:16cqw;height:5cqw}
+.rb .hard{box-shadow:1.2cqw 1.2cqw 0 var(--ink)}
+
+/* ===== ROTA C · Capa Manda ===== */
+.rc{--ink:#231C1A;--paper:#FFF1DC;--p1:#FF5B2E;--p2:#FF8FB1;--p3:#B79CFF;--p4:#2B3FE0;--p5:#6F7D2B;--p6:#7A1F3D}
+.rc .post{background:var(--paper);color:var(--ink);font-family:'Figtree',sans-serif}
+.rc .fat{font-family:'Shrikhand',serif;line-height:.95}
+.rc .hand{font-family:'Caveat',cursive;font-weight:700}
+.rc .note-card{background:var(--paper);color:var(--ink);padding:3cqw 3.4cqw;border-radius:1.6cqw;font-family:'Caveat',cursive;font-weight:700;font-size:4.6cqw;line-height:1.05}
+.rc .cap{font-size:2.4cqw;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+
+/* ===== ROTA D · Álbum de Recortes ===== */
+.rd{--ink:#2A2630;--paper:#FBF2E2;--p1:#FF6F59;--p2:#C5B3F5;--p3:#6F78F0;--p4:#A9BC98;--p5:#E4EC62;--p6:#7A2E4A}
+.rd .post{background:var(--paper);color:var(--ink);font-family:'Work Sans',sans-serif}
+.rd .serif{font-family:'Fraunces',serif;font-weight:900;font-variation-settings:'opsz' 144;line-height:.92}
+.rd .scrawl{font-family:'Covered By Your Grace',cursive;line-height:1.05}
+.rd .panel{background:var(--paper);border-radius:3cqw;box-shadow:0 .8cqw 0 rgba(42,38,48,.18)}
+.rd .polaroid{background:#fff;padding:2cqw 2cqw 7cqw;box-shadow:0 .8cqw 2cqw rgba(42,38,48,.28)}
+.rd .polaroid .ph{aspect-ratio:1}
+.rd .washi{width:18cqw;height:5.4cqw;background:repeating-linear-gradient(90deg,var(--p5) 0 1.6cqw,#f6fb9c 1.6cqw 3.2cqw);opacity:.92}
+.rd .check{background:repeating-conic-gradient(#C5B3F5 0 25%,#D9CDFA 0 50%) 0 0/12cqw 12cqw}
+.rd .check-g{background:repeating-conic-gradient(#A9BC98 0 25%,#BECDAE 0 50%) 0 0/12cqw 12cqw}
+.rd .check-p{background:repeating-conic-gradient(#FF6F59 0 25%,#FF8C79 0 50%) 0 0/12cqw 12cqw}
+.rd .stripes{background:repeating-linear-gradient(90deg,#6F78F0 0 6cqw,#8890F5 6cqw 12cqw)}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="flower" viewBox="0 0 100 100"><g fill="currentColor"><ellipse cx="50" cy="22" rx="12" ry="20"/><ellipse cx="50" cy="22" rx="12" ry="20" transform="rotate(45 50 50)"/><ellipse cx="50" cy="22" rx="12" ry="20" transform="rotate(90 50 50)"/><ellipse cx="50" cy="22" rx="12" ry="20" transform="rotate(135 50 50)"/><ellipse cx="50" cy="22" rx="12" ry="20" transform="rotate(180 50 50)"/><ellipse cx="50" cy="22" rx="12" ry="20" transform="rotate(225 50 50)"/><ellipse cx="50" cy="22" rx="12" ry="20" transform="rotate(270 50 50)"/><ellipse cx="50" cy="22" rx="12" ry="20" transform="rotate(315 50 50)"/></g><circle cx="50" cy="50" r="12" fill="var(--ctr,#fff)"/></symbol>
+    <symbol id="burst" viewBox="0 0 100 100"><g fill="currentColor"><rect x="14" y="14" width="72" height="72"/><rect x="14" y="14" width="72" height="72" transform="rotate(22.5 50 50)"/><rect x="14" y="14" width="72" height="72" transform="rotate(45 50 50)"/><rect x="14" y="14" width="72" height="72" transform="rotate(67.5 50 50)"/></g></symbol>
+    <symbol id="blob" viewBox="0 0 100 100"><path fill="currentColor" d="M50 5C74 2 96 22 95 48c-1 26-20 47-46 46C24 93 5 74 6 49 7 26 27 7 50 5Z"/></symbol>
+    <symbol id="wave" viewBox="0 0 100 20"><path fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" d="M3 10Q13 0 23 10T43 10T63 10T83 10T97 10"/></symbol>
+    <symbol id="star4" viewBox="0 0 100 100"><path fill="currentColor" d="M50 0C54 30 70 46 100 50C70 54 54 70 50 100C46 70 30 54 0 50C30 46 46 30 50 0Z"/></symbol>
+    <symbol id="squig" viewBox="0 0 100 30"><path fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" d="M4 20C14 4 22 4 26 16C30 28 38 28 44 12C48 2 56 6 60 18C64 28 74 26 80 12C84 4 90 8 96 14"/></symbol>
+    <symbol id="arrow" viewBox="0 0 100 60"><path fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" d="M4 40C26 6 62 4 90 30M72 14L92 32L64 38"/></symbol>
+  </defs>
+</svg>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">Identidade Visual da Trama do Rio · Etapa 4 de 9 · Direções criativas</div>
+  <h1>Três jeitos de a Trama aparecer</h1>
+  <p class="lead">Cada rota aposta em uma coisa como protagonista da marca: a voz, o livro ou as pessoas. Todas respeitam o que já foi decidido e todas têm um modo mais calmo, para avisos e parcerias.</p>
+  <nav class="top" aria-label="Rotas">
+    <a href="#comparar">Comparar</a><a href="#rota-b">B · Edição Extra</a><a href="#rota-c">C · Capa Manda</a><a href="#rota-d">D · Álbum de Recortes</a><a href="#decidir">Decidir</a>
+  </nav>
+  <div class="note">
+    <p><strong>Como ler:</strong> as artes são maquetes feitas na página. As fotos são caixas cinza (substituídas por fotos reais das integrantes) e a capa do Verity é uma simulação em verde e dourado, para trocar pela capa de verdade. O logo mantém o formato original; só mudei as cores, recortando o arquivo preto e branco em três partes (A TRAMA, Rio e selo). A arte final em vetor precisa ser feita a partir do original.</p>
+    <p><strong>Fontes:</strong> todas são do catálogo do Google Fonts, que o Canva inclui quase por completo. Não consegui confirmar dentro do Canva daqui. Antes de fechar a rota, vale buscar cada nome na caixa de fontes do Canva Pro da Lissa. Se alguma não aparecer, eu troco por uma parecida.</p>
+  </div>
+</header>
+
+<section id="comparar" class="sub">
+  <h2>Lado a lado</h2>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Rota</th><th>Protagonista</th><th>Sentido de "Trama"</th><th>Esforço no Canva</th><th>Foto de gente</th><th>Risco principal</th></tr></thead>
+      <tbody>
+        <tr><td><strong>B · Edição Extra</strong></td><td>A voz: fofoca, manchete, balão</td><td>Tramar</td><td>Baixo a médio</td><td>Em caixas e recortes dentro do jornal</td><td>Virar piada de uma nota só e ler como panfleto</td></tr>
+        <tr><td><strong>C · Capa Manda</strong></td><td>O livro: cor e forma da capa</td><td>Trama narrativa</td><td>Muito baixo</td><td>Pequena. Pessoas ficam em segundo plano</td><td>Parecer qualquer clube bonito</td></tr>
+        <tr><td><strong>D · Álbum de Recortes</strong></td><td>As pessoas: foto, papel, adesivo</td><td>Amizade (as linhas que se juntam)</td><td>Médio, exige biblioteca pronta</td><td>Protagonista</td><td>Bagunça sem grade, "papelaria do Pinterest"</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============ ROTA B ============ -->
+<section class="route rb" id="rota-b">
+  <div class="eyebrow">Rota B · protagonista: a voz</div>
+  <h2>Edição Extra</h2>
+  <p class="lead">O clube como revista de fofoca. Manchete gorda, "exclusivo", balão e bilhete. O caos organizado vira diagramação de tabloide, e a piada fica no visual e não só no texto.</p>
+
+  <div class="sub">
+    <div>
+      <h3>1 · Exemplo aplicado: livro do mês (Verity)</h3>
+      <div class="posts">
+        <div>
+          <div class="post dots">
+            <div class="abs strip"><span>A Trama do Rio</span><span>Edição de setembro</span></div>
+            <div class="abs hl" style="left:5cqw;top:10cqw;font-size:11.4cqw;width:90cqw">Ela escreveu <span class="mark">tudo.</span><br>E agora?</div>
+            <div class="abs hard" style="left:50cqw;top:40cqw;width:40cqw;transform:rotate(4deg)"><div class="cover"><i>Verity</i><b>COLLEEN HOOVER</b><em>CAPA DE EXEMPLO</em></div></div>
+            <div class="abs tape" style="left:62cqw;top:37cqw;transform:rotate(-6deg)"></div>
+            <div class="abs" style="left:4cqw;top:44cqw;width:28cqw;height:28cqw;color:var(--p1);transform:rotate(-10deg)"><svg class="g"><use href="#burst"/></svg><div class="abs marker" style="inset:0;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--paper);font-size:4.4cqw;line-height:1">leitura<br>do mês</div></div>
+            <div class="abs bubble" style="left:5cqw;top:77cqw;width:48cqw">gente, li o cap. 11 de luz acesa e não recomendo</div>
+            <div class="abs" style="left:0;right:0;bottom:0;height:8%;background:var(--p1);color:var(--paper);display:flex;align-items:center;justify-content:space-between;padding-inline:4cqw;font-weight:700;font-size:3cqw;letter-spacing:.1em;text-transform:uppercase"><span>Verity · Colleen Hoover</span><span style="width:8cqw"><div class="logo" style="--c1:var(--paper);--c2:var(--paper);--c3:var(--paper)"><span class="l3"></span></div></span></div>
+          </div>
+          <div class="pcap">Livro do mês. Capa em caixa tombada, manchete com marca-texto, balão de fofoca. Logo discreto na faixa.</div>
+        </div>
+        <div>
+          <div class="post dots">
+            <div class="abs strip"><span>Flagra!</span><span>Setembro</span></div>
+            <div class="abs hl" style="left:5cqw;top:10cqw;font-size:10.6cqw;width:90cqw">Um mês <span class="mark">com o clube</span></div>
+            <div class="abs hard ph" style="left:5cqw;top:36cqw;width:42cqw;height:34cqw;transform:rotate(-2deg)">foto · encontro</div>
+            <div class="abs hard ph" style="left:52cqw;top:34cqw;width:43cqw;height:30cqw;transform:rotate(2deg)">foto · piquenique</div>
+            <div class="abs hard ph" style="left:14cqw;top:68cqw;width:40cqw;height:26cqw;transform:rotate(1.5deg)">foto · meet</div>
+            <div class="abs marker" style="left:56cqw;top:66cqw;width:38cqw;font-size:3.8cqw;line-height:1.1">a Ste jura que não foi ela. foi ela.</div>
+            <div class="abs" style="left:2cqw;top:60cqw;width:20cqw;height:20cqw;color:var(--p3);transform:rotate(12deg)"><svg class="g"><use href="#burst"/></svg><div class="abs marker" style="inset:0;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--ink);font-size:3.6cqw;line-height:1">0<br>silêncio</div></div>
+          </div>
+          <div class="pcap">Um mês com o clube. Fotos viram "flagras", legenda de marcador.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cols">
+      <div>
+        <h3>2 · Paleta e lógica de cor</h3>
+        <div class="pal">
+          <div class="sw"><i style="background:#1E1824"></i><b>Tinta ameixa</b><span>#1E1824 · neutro escuro</span></div>
+          <div class="sw"><i style="background:#F3E9D2"></i><b>Jornal</b><span>#F3E9D2 · creme</span></div>
+          <div class="sw"><i style="background:#E62E7B"></i><b>Framboesa</b><span>#E62E7B</span></div>
+          <div class="sw"><i style="background:#C7E83B"></i><b>Lima</b><span>#C7E83B</span></div>
+          <div class="sw"><i style="background:#FF6A2B"></i><b>Papaia</b><span>#FF6A2B</span></div>
+          <div class="sw"><i style="background:#B8A2FF"></i><b>Lilás</b><span>#B8A2FF</span></div>
+          <div class="sw"><i style="background:#5E1633"></i><b>Vinho</b><span>#5E1633</span></div>
+        </div>
+        <p style="margin-top:14px"><strong>Combinações que funcionam:</strong></p>
+        <div class="combos">
+          <span class="combo" style="background:#F3E9D2;color:#1E1824">Aa jornal + tinta</span>
+          <span class="combo" style="background:#E62E7B;color:#F3E9D2">Aa framboesa + jornal</span>
+          <span class="combo" style="background:#C7E83B;color:#1E1824">Aa lima + tinta</span>
+          <span class="combo" style="background:#5E1633;color:#C7E83B">Aa vinho + lima</span>
+          <span class="combo" style="background:#B8A2FF;color:#1E1824">Aa lilás + tinta</span>
+        </div>
+        <p style="margin-top:12px"><strong>Lógica do mês:</strong> tinta e jornal ficam fixos. Cada mês escolhe uma cor de destaque (selo, faixa, marca-texto) e uma de apoio. Nunca três. Texto corrido só em tinta; framboesa e papaia só em título grande.</p>
+      </div>
+      <div>
+        <h3>3 · Tipografia</h3>
+        <div class="specimen" style="background:#F3E9D2;color:#1E1824">
+          <small>Título</small><div style="font-family:'Bowlby One';font-size:2rem;line-height:1">BOWLBY ONE</div>
+          <small style="margin-top:14px">Texto</small><div style="font-family:'DM Sans';font-size:1.1rem;font-weight:500">DM Sans, 400 e 700. Legível em legenda e aviso.</div>
+          <small style="margin-top:14px">Acento</small><div style="font-family:'Permanent Marker';font-size:1.4rem">Permanent Marker, o rabisco de caneta</div>
+        </div>
+        <p style="margin-top:12px" class="pcap">Disponibilidade: as três são do Google Fonts. Confirmar a busca por nome no Canva Pro. Bowlby One só em caixa alta e em títulos curtos.</p>
+      </div>
+    </div>
+
+    <div class="cols">
+      <div>
+        <h3>4 · Grafismos e humor visual</h3>
+        <div class="specimen" style="background:#F3E9D2;color:#1E1824">
+          <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center">
+            <div style="width:70px;height:70px;color:#E62E7B"><svg class="g"><use href="#burst"/></svg></div>
+            <div style="width:70px;height:70px;color:#C7E83B"><svg class="g"><use href="#burst"/></svg></div>
+            <div style="width:110px;height:30px;color:#1E1824"><svg class="g"><use href="#squig"/></svg></div>
+            <div style="width:90px;height:50px;color:#FF6A2B"><svg class="g"><use href="#arrow"/></svg></div>
+            <div style="width:70px;height:20px;background-image:radial-gradient(circle,#1E1824 2px,transparent 2.5px);background-size:10px 10px;opacity:.5"></div>
+          </div>
+        </div>
+        <ul class="tight" style="margin-top:12px">
+          <li><strong>Padrão:</strong> meio-tom (bolinhas) no fundo, faixa de jornal no topo. Um único padrão.</li>
+          <li><strong>Adesivos:</strong> burst (estouro) com "EXCLUSIVO", "URGENTE", "LEITURA DO MÊS"; marca-texto em lima; seta e rabisco de marcador.</li>
+          <li><strong>Humor:</strong> manchete exagerada, balão de pensamento, legenda de flagra, "fonte: a Ste".</li>
+          <li><strong>Estrelinha:</strong> opcional, como carimbo de "novidade".</li>
+        </ul>
+      </div>
+      <div>
+        <h3>5 · O logo</h3>
+        <div class="logotiles">
+          <div class="logotile" style="background:#1E1824;color:#F3E9D2">Negativa<div class="logo" style="--c1:#F3E9D2;--c2:#C7E83B;--c3:#E62E7B"><span class="l1"></span><span class="l2"></span><span class="l3"></span></div></div>
+          <div class="logotile" style="background:#F3E9D2;color:#1E1824">Clara<div class="logo" style="--c1:#1E1824;--c2:#FF6A2B;--c3:#E62E7B"><span class="l1"></span><span class="l2"></span><span class="l3"></span></div></div>
+          <div class="logotile" style="background:#C7E83B;color:#1E1824">Sobre cor<div class="logo" style="--c1:#1E1824;--c2:#E62E7B;--c3:#1E1824"><span class="l1"></span><span class="l2"></span><span class="l3"></span></div></div>
+        </div>
+        <p class="pcap">Formato intacto. Selo "do" no destaque do mês, Rio na framboesa.</p>
+      </div>
+    </div>
+
+    <div class="cols">
+      <div>
+        <h3>6 · Modo mais calmo (avisos e parcerias)</h3>
+        <div class="post" style="background:#F3E9D2">
+          <div class="abs" style="inset:5cqw;border:.5cqw solid var(--ink)"></div>
+          <div class="abs" style="left:11cqw;top:11cqw;width:15cqw"><div class="logo" style="--c1:var(--ink);--c2:var(--p1);--c3:var(--ink)"><span class="l1"></span><span class="l2"></span><span class="l3"></span></div></div>
+          <div class="abs cap" style="left:11cqw;top:40cqw;font-size:2.4cqw;font-weight:700;letter-spacing:.14em;text-transform:uppercase">Aviso · exemplo</div>
+          <div class="abs hl" style="left:11cqw;top:46cqw;font-size:8.6cqw;width:78cqw">Encontro de <span class="mark">outubro</span></div>
+          <div class="abs" style="left:11cqw;top:72cqw;width:70cqw;font-size:3.6cqw;line-height:1.35;font-weight:500">Sábado, 24/10, às 15h. Traga o livro, uma cadeira e a opinião mais polêmica.</div>
+        </div>
+        <p class="pcap">Mesma fonte, mesmo marca-texto, sem meio-tom e sem adesivo. Lê como capa de revista de moda.</p>
+      </div>
+      <div>
+        <h3>7 · Camadas e riscos</h3>
+        <div class="lock"><h4>Travado (as meninas não mexem)</h4><ul class="tight"><li>Faixa de jornal, fundo e paleta</li><li>Bowlby One nos títulos, DM Sans no texto</li><li>Posição do logo e da faixa inferior</li></ul></div>
+        <div class="lock" style="margin-top:10px"><h4>Solto (movem à vontade)</h4><ul class="tight"><li>Bursts, setas, rabiscos e marca-texto</li><li>Fotos em caixa tombada</li><li>Balões e legendas de marcador</li></ul></div>
+        <div class="lock" style="margin-top:10px"><h4>Riscos</h4><ul class="tight">
+          <li><strong>Depende de texto bom.</strong> Manchete sem graça deixa a rota sem motivo. Quem escreve a manchete vira peça-chave.</li>
+          <li><strong>Pode ler como panfleto ou jornal de oferta</strong>, que é o que a Trama não é ("comercial"). A tinta ameixa e o meio-tom contêm isso, mas é a rota mais perto do estilo antigo no formato.</li>
+          <li>Caixa alta em tudo cansa e sai da leitura em legenda longa.</li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ROTA C ============ -->
+<section class="route rc" id="rota-c">
+  <div class="eyebrow">Rota C · protagonista: o livro</div>
+  <h2>Capa Manda</h2>
+  <p class="lead">A cada mês a marca vira o livro: um bloco grande de cor e formas gordas tiradas da capa. O mês muda, o esqueleto não. É a rota mais fácil de produzir.</p>
+
+  <div class="sub">
+    <div>
+      <h3>1 · Exemplo aplicado: livro do mês (Verity)</h3>
+      <div class="posts">
+        <div>
+          <div class="post" style="background:var(--p5)">
+            <div class="abs" style="left:-12cqw;top:-10cqw;width:70cqw;height:70cqw;color:var(--paper)"><svg class="g"><use href="#blob"/></svg></div>
+            <div class="abs" style="right:-14cqw;bottom:-14cqw;width:70cqw;height:70cqw;color:var(--p6)"><svg class="g"><use href="#blob"/></svg></div>
+            <div class="abs" style="left:-8cqw;bottom:6cqw;width:34cqw;height:17cqw;background:var(--ink);border-radius:17cqw 17cqw 0 0;transform:rotate(-14deg)"></div>
+            <div class="abs" style="right:6cqw;top:5cqw;width:22cqw;height:22cqw;color:var(--p2)"><svg class="g"><use href="#flower"/></svg></div>
+            <div class="abs cap" style="left:6cqw;top:6cqw;color:var(--paper)">Livro do mês</div>
+            <div class="abs fat" style="left:6cqw;top:10cqw;font-size:12cqw;color:var(--p6)">setembro</div>
+            <div class="abs" style="left:28cqw;top:24cqw;width:44cqw;transform:rotate(-5deg);box-shadow:1.6cqw 1.6cqw 0 var(--ink)"><div class="cover"><i>Verity</i><b>COLLEEN HOOVER</b><em>CAPA DE EXEMPLO</em></div></div>
+            <div class="abs fat" style="left:6cqw;top:62cqw;font-size:26cqw;color:var(--paper)">Verity</div>
+            <div class="abs note-card" style="right:5cqw;top:44cqw;width:34cqw;transform:rotate(5deg)">é natural esperar o pior das pessoas</div>
+            <div class="abs" style="right:5cqw;bottom:4cqw;width:11cqw"><div class="logo" style="--c1:var(--paper);--c2:var(--paper);--c3:var(--paper)"><span class="l3"></span></div></div>
+            <div class="abs" style="left:6cqw;bottom:4.4cqw;font-size:2.6cqw;font-weight:800;color:var(--paper);letter-spacing:.06em">@atramadorio</div>
+          </div>
+          <div class="pcap">Livro do mês. Cor do mês (oliva) vem da capa, vinho de apoio, formas gordas e título enorme. Pessoas não aparecem aqui.</div>
+        </div>
+        <div>
+          <div class="post" style="background:var(--p4)">
+            <div class="abs fat" style="left:6cqw;top:5cqw;width:88cqw;font-size:10.6cqw;color:var(--paper)">um mês com o clube</div>
+            <div class="abs" style="left:6cqw;top:30cqw;right:6cqw;bottom:6cqw;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);gap:2.4cqw">
+              <div class="ph" style="border-radius:3cqw">foto</div>
+              <div style="background:var(--p1);border-radius:3cqw;display:flex;align-items:flex-end;padding:2cqw" class="hand"><span style="font-size:5.4cqw;color:var(--paper);line-height:1">semana 1: chegou o livro</span></div>
+              <div style="background:var(--p2);border-radius:50% 50% 3cqw 3cqw"></div>
+              <div style="background:var(--p3);border-radius:3cqw;display:flex;align-items:flex-end;padding:2cqw" class="hand"><span style="font-size:5.4cqw;line-height:1">semana 2: surtos no grupo</span></div>
+              <div class="ph" style="border-radius:3cqw">foto</div>
+              <div style="background:var(--ink);border-radius:3cqw;color:var(--p5);display:flex;align-items:flex-end;padding:2cqw" class="hand"><span style="font-size:5.4cqw;line-height:1">semana 3: spoiler sem aviso</span></div>
+              <div style="background:var(--paper);border-radius:3cqw;display:flex;align-items:flex-end;padding:2cqw" class="hand"><span style="font-size:5.4cqw;line-height:1">semana 4: encontro</span></div>
+              <div class="ph" style="border-radius:3cqw 3cqw 50% 50%">foto</div>
+              <div style="background:var(--p6);border-radius:3cqw;display:flex;align-items:center;justify-content:center;color:var(--p2)"><div style="width:60%"><svg class="g"><use href="#flower"/></svg></div></div>
+            </div>
+          </div>
+          <div class="pcap">Um mês com o clube. Grade de blocos: uma cor por semana, três fotos entre os blocos.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cols">
+      <div>
+        <h3>2 · Paleta e lógica de cor</h3>
+        <div class="pal">
+          <div class="sw"><i style="background:#231C1A"></i><b>Tinta café</b><span>#231C1A · neutro escuro</span></div>
+          <div class="sw"><i style="background:#FFF1DC"></i><b>Creme</b><span>#FFF1DC</span></div>
+          <div class="sw"><i style="background:#FF5B2E"></i><b>Tomate</b><span>#FF5B2E</span></div>
+          <div class="sw"><i style="background:#FF8FB1"></i><b>Flamingo</b><span>#FF8FB1</span></div>
+          <div class="sw"><i style="background:#B79CFF"></i><b>Lilás</b><span>#B79CFF</span></div>
+          <div class="sw"><i style="background:#2B3FE0"></i><b>Cobalto</b><span>#2B3FE0</span></div>
+          <div class="sw"><i style="background:#6F7D2B"></i><b>Oliva</b><span>#6F7D2B</span></div>
+          <div class="sw"><i style="background:#7A1F3D"></i><b>Vinho</b><span>#7A1F3D</span></div>
+        </div>
+        <p style="margin-top:14px"><strong>Combinações que funcionam:</strong></p>
+        <div class="combos">
+          <span class="combo" style="background:#6F7D2B;color:#FFF1DC">Aa oliva + creme</span>
+          <span class="combo" style="background:#2B3FE0;color:#FF8FB1">Aa cobalto + flamingo</span>
+          <span class="combo" style="background:#FF5B2E;color:#231C1A">Aa tomate + tinta</span>
+          <span class="combo" style="background:#B79CFF;color:#7A1F3D">Aa lilás + vinho</span>
+          <span class="combo" style="background:#7A1F3D;color:#FF8FB1">Aa vinho + flamingo</span>
+        </div>
+        <p style="margin-top:12px"><strong>Lógica do mês:</strong> a cor mais forte da capa vira o bloco do mês, pela cor mais próxima da paleta. Uma segunda cor da capa vira apoio. Tinta e creme fixos. Se a capa for toda escura (como a do Verity), o mês usa a cor da capa mais viva (aqui, o verde, na oliva) e não o preto.</p>
+      </div>
+      <div>
+        <h3>3 · Tipografia</h3>
+        <div class="specimen" style="background:#FFF1DC;color:#231C1A">
+          <small>Título</small><div style="font-family:'Shrikhand';font-size:2.2rem;line-height:1">Shrikhand</div>
+          <small style="margin-top:14px">Texto</small><div style="font-family:'Figtree';font-size:1.1rem;font-weight:600">Figtree, 400, 600 e 800. Redonda e firme em corpo pequeno.</div>
+          <small style="margin-top:14px">Acento</small><div style="font-family:'Caveat';font-size:1.7rem;font-weight:700">Caveat, a letra da caderneta</div>
+        </div>
+        <p style="margin-top:12px" class="pcap">Disponibilidade: as três são do Google Fonts. Confirmar no Canva Pro. Shrikhand só em título curto e minúsculo ou capitalizado.</p>
+      </div>
+    </div>
+
+    <div class="cols">
+      <div>
+        <h3>4 · Grafismos e humor visual</h3>
+        <div class="specimen" style="background:#FFF1DC;color:#231C1A">
+          <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center">
+            <div style="width:70px;height:70px;color:#FF5B2E"><svg class="g"><use href="#blob"/></svg></div>
+            <div style="width:70px;height:70px;color:#B79CFF"><svg class="g"><use href="#flower"/></svg></div>
+            <div style="width:70px;height:35px;background:#2B3FE0;border-radius:70px 70px 0 0"></div>
+            <div style="width:60px;height:60px;background:#FF8FB1;border-radius:50%"></div>
+            <div style="width:100px;height:22px;color:#7A1F3D"><svg class="g"><use href="#wave"/></svg></div>
+          </div>
+        </div>
+        <ul class="tight" style="margin-top:12px">
+          <li><strong>Padrão:</strong> nenhum. A família é de formas lisas: blob, semicírculo, círculo, flor e onda.</li>
+          <li><strong>Adesivos:</strong> bilhete de papel com frase do livro, escrito à mão, levemente torto.</li>
+          <li><strong>Humor:</strong> frase curta em Caveat tipo comentário de margem de livro. Menos balão, mais anotação.</li>
+          <li><strong>Estrelinha:</strong> opcional, como "ponto" na anotação.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>5 · O logo</h3>
+        <div class="logotiles">
+          <div class="logotile" style="background:#231C1A;color:#FFF1DC">Negativa<div class="logo" style="--c1:#FFF1DC;--c2:#B79CFF;--c3:#FF5B2E"><span class="l1"></span><span class="l2"></span><span class="l3"></span></div></div>
+          <div class="logotile" style="background:#FFF1DC;color:#231C1A">Clara<div class="logo" style="--c1:#231C1A;--c2:#FF5B2E;--c3:#2B3FE0"><span class="l1"></span><span class="l2"></span><span class="l3"></span></div></div>
+          <div class="logotile" style="background:#6F7D2B;color:#FFF1DC">Sobre cor<div class="logo" style="--c1:#FFF1DC;--c2:#FF8FB1;--c3:#FFF1DC"><span class="l1"></span><span class="l2"></span><span class="l3"></span></div></div>
+        </div>
+        <p class="pcap">Formato intacto. Sobre o bloco do mês, o logo vai todo em creme, com o selo em flamingo.</p>
+      </div>
+    </div>
+
+    <div class="cols">
+      <div>
+        <h3>6 · Modo mais calmo (avisos e parcerias)</h3>
+        <div class="post" style="background:var(--paper)">
+          <div class="abs" style="left:0;right:0;top:0;height:42%;background:var(--p4)"></div>
+          <div class="abs" style="left:7cqw;top:7cqw;width:15cqw"><div class="logo" style="--c1:var(--paper);--c2:var(--p2);--c3:var(--paper)"><span class="l1"></span><span class="l2"></span><span class="l3"></span></div></div>
+          <div class="abs fat" style="left:7cqw;top:24cqw;font-size:11cqw;color:var(--paper)">Encontro de outubro</div>
+          <div class="abs cap" style="left:7cqw;top:52cqw">Aviso · exemplo</div>
+          <div class="abs" style="left:7cqw;top:58cqw;width:80cqw;font-size:4cqw;line-height:1.35;font-weight:600">Sábado, 24/10, às 15h. Traga o livro, uma cadeira e a opinião mais polêmica.</div>
+        </div>
+        <p class="pcap">Um bloco só, uma cor só, sem forma solta. Mesma fonte e mesmo logo.</p>
+      </div>
+      <div>
+        <h3>7 · Camadas e riscos</h3>
+        <div class="lock"><h4>Travado (as meninas não mexem)</h4><ul class="tight"><li>Esqueleto: mês, capa, título, autor</li><li>Shrikhand no título, Figtree no texto</li><li>Neutros e posição do logo</li></ul></div>
+        <div class="lock" style="margin-top:10px"><h4>Solto (movem à vontade)</h4><ul class="tight"><li>Formas gordas (troca de cor e de lugar)</li><li>Bilhete com frase</li><li>Flores e rabiscos</li></ul></div>
+        <div class="lock" style="margin-top:10px"><h4>Riscos</h4><ul class="tight">
+          <li><strong>É a menos "Trama" no visual.</strong> Bloco de cor e letra gorda existem em muitos clubes. A identidade fica na voz, como você já pediu, mas a marca depende de a Lissa e a Renata escreverem bem.</li>
+          <li>As pessoas, que você quer como protagonistas, ficam pequenas.</li>
+          <li>Capa escura ou sem cor (preto e branco) dá bloco feio ou sem graça. Precisa de regra de reserva.</li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ROTA D ============ -->
+<section class="route rd" id="rota-d">
+  <div class="eyebrow">Rota D · protagonista: as pessoas</div>
+  <h2>Álbum de Recortes</h2>
+  <p class="lead">A marca é o álbum do clube: fotos reais emolduradas, papel, fita, adesivo e letra à mão, tudo cheio e sobreposto sobre um fundo de padrão. É a rota mais perto das suas favoritas 09 e 12 e do post "Um mês com o clube".</p>
+
+  <div class="sub">
+    <div>
+      <h3>1 · Exemplo aplicado: livro do mês (Verity)</h3>
+      <div class="posts">
+        <div>
+          <div class="post check">
+            <div class="abs" style="left:6cqw;top:5cqw;width:30cqw;height:30cqw;color:var(--p5);--ctr:var(--p1)"><svg class="g"><use href="#flower"/></svg></div>
+            <div class="abs panel" style="left:7cqw;right:7cqw;top:22cqw;bottom:8cqw;transform:rotate(-1.2deg)"></div>
+            <div class="abs" style="left:11cqw;top:27cqw;width:36cqw;transform:rotate(-4deg);box-shadow:0 1cqw 2cqw rgba(42,38,48,.35)"><div class="cover"><i>Verity</i><b>COLLEEN HOOVER</b><em>CAPA DE EXEMPLO</em></div></div>
+            <div class="abs washi" style="left:20cqw;top:23.5cqw;transform:rotate(-8deg)"></div>
+            <div class="abs serif" style="left:50cqw;top:30cqw;font-size:15cqw;width:44cqw">Verity</div>
+            <div class="abs scrawl" style="left:50cqw;top:48cqw;font-size:5.4cqw;width:40cqw;color:var(--p6)">setembro, o mês da desconfiança</div>
+            <div class="abs polaroid" style="right:5cqw;top:63cqw;width:30cqw;transform:rotate(6deg)"><div class="ph">foto · as meninas</div></div>
+            <div class="abs" style="right:2cqw;top:54cqw;width:12cqw;height:12cqw;color:var(--p3);transform:rotate(10deg);--ctr:var(--p5)"><svg class="g"><use href="#flower"/></svg></div>
+            <div class="abs" style="left:13cqw;top:78cqw;width:22cqw;height:22cqw;border-radius:50%;background:var(--p1);color:var(--paper);display:flex;align-items:center;justify-content:center;text-align:center;transform:rotate(-10deg)"><span class="scrawl" style="font-size:4.6cqw">li de madrugada</span></div>
+            <div class="abs" style="left:7cqw;top:4cqw;font-size:2.4cqw;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)"></div>
+            <div class="abs" style="right:6cqw;top:5cqw;width:10cqw"><div class="logo" style="--c1:var(--ink);--c2:var(--p1);--c3:var(--ink)"><span class="l1"></span><span class="l2"></span><span class="l3"></span></div></div>
+          </div>
+          <div class="pcap">Livro do mês. Fundo xadrez lilás (muda por mês), painel de papel travado, foto emoldurada, adesivos soltos.</div>
+        </div>
+        <div>
+          <div class="post stripes">
+            <div class="abs panel" style="left:6cqw;right:6cqw;top:6cqw;bottom:6cqw"></div>
+            <div class="abs serif" style="left:11cqw;top:11cqw;width:60cqw;font-size:10.4cqw">Um mês com o clube</div>
+            <div class="abs polaroid" style="left:9cqw;top:36cqw;width:38cqw;transform:rotate(-5deg)"><div class="ph">foto · encontro</div></div>
+            <div class="abs polaroid" style="left:46cqw;top:44cqw;width:38cqw;transform:rotate(4deg)"><div class="ph">foto · piquenique</div></div>
+            <div class="abs polaroid" style="left:22cqw;top:62cqw;width:34cqw;transform:rotate(-1deg)"><div class="ph">foto · cada uma com seu livro</div></div>
+            <div class="abs washi" style="left:18cqw;top:33cqw;transform:rotate(-10deg)"></div>
+            <div class="abs washi" style="left:58cqw;top:41cqw;transform:rotate(7deg)"></div>
+            <div class="abs scrawl" style="left:62cqw;top:68cqw;width:30cqw;font-size:5cqw;color:var(--p6);transform:rotate(-4deg)">migas</div>
+            <div class="abs" style="right:8cqw;top:10cqw;width:16cqw;height:16cqw;color:var(--p1);--ctr:var(--p5)"><svg class="g"><use href="#flower"/></svg></div>
+          </div>
+          <div class="pcap">Um mês com o clube. Mesmo painel, três polaroids sobrepostas, fita e anotação.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cols">
+      <div>
+        <h3>2 · Paleta e lógica de cor</h3>
+        <div class="pal">
+          <div class="sw"><i style="background:#2A2630"></i><b>Grafite</b><span>#2A2630 · neutro escuro</span></div>
+          <div class="sw"><i style="background:#FBF2E2"></i><b>Papel</b><span>#FBF2E2 · creme</span></div>
+          <div class="sw"><i style="background:#FF6F59"></i><b>Goiaba</b><span>#FF6F59</span></div>
+          <div class="sw"><i style="background:#C5B3F5"></i><b>Lilás</b><span>#C5B3F5</span></div>
+          <div class="sw"><i style="background:#6F78F0"></i><b>Pervinca</b><span>#6F78F0</span></div>
+          <div class="sw"><i style="background:#A9BC98"></i><b>Sálvia</b><span>#A9BC98</span></div>
+          <div class="sw"><i style="background:#E4EC62"></i><b>Limão</b><span>#E4EC62</span></div>
+          <div class="sw"><i style="background:#7A2E4A"></i><b>Vinho</b><span>#7A2E4A</span></div>
+        </div>
+        <p style="margin-top:14px"><strong>Combinações que funcionam:</strong></p>
+        <div class="combos">
+          <span class="combo" style="background:#C5B3F5;color:#2A2630">Aa lilás + grafite</span>
+          <span class="combo" style="background:#FF6F59;color:#FBF2E2">Aa goiaba + papel</span>
+          <span class="combo" style="background:#A9BC98;color:#7A2E4A">Aa sálvia + vinho</span>
+          <span class="combo" style="background:#6F78F0;color:#E4EC62">Aa pervinca + limão</span>
+          <span class="combo" style="background:#2A2630;color:#E4EC62">Aa grafite + limão</span>
+        </div>
+        <p style="margin-top:12px"><strong>Lógica do mês:</strong> o painel de papel e o grafite não mudam. O fundo troca de cor e de padrão a cada mês: xadrez, listra, bolinha, onda, flor. Uma cor de fundo + uma de adesivo + o limão como brilho. Rosa (goiaba) é uma entre as seis, sem prioridade.</p>
+      </div>
+      <div>
+        <h3>3 · Tipografia</h3>
+        <div class="specimen" style="background:#FBF2E2;color:#2A2630">
+          <small>Título</small><div style="font-family:'Fraunces';font-weight:900;font-size:2.3rem;line-height:.95;font-variation-settings:'opsz' 144">Fraunces Black</div>
+          <small style="margin-top:14px">Texto</small><div style="font-family:'Work Sans';font-size:1.1rem">Work Sans, 400, 500 e 700. Neutra, deixa o título falar.</div>
+          <small style="margin-top:14px">Acento</small><div style="font-family:'Covered By Your Grace';font-size:1.7rem">Covered By Your Grace, a anotação</div>
+        </div>
+        <p style="margin-top:12px" class="pcap">Disponibilidade: as três são do Google Fonts. Confirmar no Canva Pro. O mesmo Fraunces em peso leve vira o modo calmo.</p>
+      </div>
+    </div>
+
+    <div class="cols">
+      <div>
+        <h3>4 · Grafismos e humor visual</h3>
+        <div class="specimen" style="background:#FBF2E2;color:#2A2630">
+          <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+            <div style="width:72px;height:72px;background:repeating-conic-gradient(#C5B3F5 0 25%,#D9CDFA 0 50%) 0 0/18px 18px"></div>
+            <div style="width:72px;height:72px;background:repeating-linear-gradient(90deg,#6F78F0 0 9px,#8890F5 9px 18px)"></div>
+            <div style="width:72px;height:72px;background:radial-gradient(circle,#FF6F59 5px,transparent 5.5px) 0 0/18px 18px,#FBF2E2;border:1px solid #D7D4E0"></div>
+            <div style="width:60px;height:60px;color:#E4EC62;--ctr:#FF6F59"><svg class="g"><use href="#flower"/></svg></div>
+            <div style="width:80px;height:20px;color:#7A2E4A"><svg class="g"><use href="#wave"/></svg></div>
+          </div>
+        </div>
+        <ul class="tight" style="margin-top:12px">
+          <li><strong>Padrões:</strong> xadrez, listra, bolinha, onda, flor. Um por post.</li>
+          <li><strong>Adesivos:</strong> flor, selo redondo com frase, fita (washi), polaroid, recorte de pessoa com contorno.</li>
+          <li><strong>Humor:</strong> anotação à mão no canto, apelido nas fotos, selo com confissão ("li de madrugada").</li>
+          <li><strong>Estrelinha:</strong> opcional, entre os adesivos.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>5 · O logo</h3>
+        <div class="logotiles">
+          <div class="logotile" style="background:#2A2630;color:#FBF2E2">Negativa<div class="logo" style="--c1:#FBF2E2;--c2:#E4EC62;--c3:#FF6F59"><span class="l1"></span><span class="l2"></span><span class="l3"></span></div></div>
+          <div class="logotile" style="background:#FBF2E2;color:#2A2630">Clara<div class="logo" style="--c1:#2A2630;--c2:#FF6F59;--c3:#6F78F0"><span class="l1"></span><span class="l2"></span><span class="l3"></span></div></div>
+          <div class="logotile" style="background:#C5B3F5;color:#2A2630">Sobre cor<div class="logo" style="--c1:#2A2630;--c2:#FBF2E2;--c3:#2A2630"><span class="l1"></span><span class="l2"></span><span class="l3"></span></div></div>
+        </div>
+        <p class="pcap">Formato intacto. Pode virar adesivo redondo: logo em círculo de papel, com borda branca.</p>
+      </div>
+    </div>
+
+    <div class="cols">
+      <div>
+        <h3>6 · Modo mais calmo (avisos e parcerias)</h3>
+        <div class="post" style="background:var(--paper)">
+          <div class="abs" style="left:0;right:0;top:0;height:9cqw;color:var(--p2);display:flex;overflow:hidden"><div style="width:100%;height:100%;background:repeating-conic-gradient(var(--p2) 0 25%,#D9CDFA 0 50%) 0 0/9cqw 9cqw"></div></div>
+          <div class="abs" style="left:9cqw;top:20cqw;width:16cqw"><div class="logo" style="--c1:var(--ink);--c2:var(--p1);--c3:var(--ink)"><span class="l1"></span><span class="l2"></span><span class="l3"></span></div></div>
+          <div class="abs serif" style="left:9cqw;top:42cqw;font-size:11cqw;font-weight:500;width:80cqw;font-variation-settings:'opsz' 144">Encontro de outubro</div>
+          <div class="abs scrawl" style="left:9cqw;top:66cqw;font-size:5cqw;color:var(--p6)">aviso · exemplo</div>
+          <div class="abs" style="left:9cqw;top:74cqw;width:78cqw;font-size:3.8cqw;line-height:1.35">Sábado, 24/10, às 15h. Traga o livro, uma cadeira e a opinião mais polêmica.</div>
+        </div>
+        <p class="pcap">Uma faixa de padrão, peso leve no título, sem adesivo. Mantém o eixo.</p>
+      </div>
+      <div>
+        <h3>7 · Camadas e riscos</h3>
+        <div class="lock"><h4>Travado (as meninas não mexem)</h4><ul class="tight"><li>Painel de papel (tamanho, borda e posição)</li><li>Fraunces nos títulos, Work Sans no texto</li><li>Neutros, logo e a regra "um padrão por post"</li></ul></div>
+        <div class="lock" style="margin-top:10px"><h4>Solto (movem à vontade)</h4><ul class="tight"><li>Adesivos, flores e fitas</li><li>Polaroids e recortes de pessoa</li><li>Anotações e selos com frase</li></ul></div>
+        <div class="lock" style="margin-top:10px"><h4>Riscos</h4><ul class="tight">
+          <li><strong>Exige biblioteca pronta</strong> no Canva Pro: adesivos, fitas, molduras e fundos de padrão. Sem ela, vira a rota mais cansativa de montar.</li>
+          <li><strong>Cheio demais sem grade vira bagunça.</strong> Por isso o painel é travado e o limite é "um padrão e até cinco adesivos".</li>
+          <li><strong>Pode ler como "papelaria do Pinterest".</strong> O que evita isso é letra grande, humor na anotação e foto real.</li>
+          <li>Fotos ruins estragam a peça. Precisa de uma regra de foto (luz, corte).</li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sub" id="decidir">
+  <h2>O que eu recomendo</h2>
+  <div class="rec">
+    <p><strong>Base na D, com a regra de cor da C e a voz da B.</strong> Foi isso que você pediu nas respostas: pessoas protagonistas, colagem, humor escrito à mão, fundo de padrão com painel. O "Um mês com o clube" já é um D sem ter nome.</p>
+    <ul class="tight">
+      <li><strong>Da D:</strong> fundo de padrão, painel de papel travado, foto emoldurada, adesivos soltos.</li>
+      <li><strong>Da C:</strong> a regra do mês: a cor do fundo vem da capa do livro.</li>
+      <li><strong>Da B:</strong> a camada de humor: uma manchete gorda e um balão por post, no máximo.</li>
+    </ul>
+    <p>O que me preocupa: a mistura herda o risco mais pesado da D, que é a biblioteca de recortes no Canva. Se a Lissa não aguentar manter, a C funciona sozinha como reserva.</p>
+  </div>
+  <div class="note">
+    <p><strong>Para você decidir:</strong> escolher uma rota, uma mistura ou pedir ajuste. A escolha vai para Decisões e vira a base da etapa 5 (sistema visual).</p>
+  </div>
+</section>
+</div>

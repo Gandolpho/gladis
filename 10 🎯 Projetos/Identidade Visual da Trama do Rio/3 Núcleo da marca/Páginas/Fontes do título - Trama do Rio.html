@@ -1,0 +1,159 @@
+<title>Fontes do título Trama</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,100..900,0..100;1,9..144,100..900,0..100&family=Caprasimo&family=Corben:wght@700&family=Shrikhand&family=Chicle&family=Alfa+Slab+One&family=Young+Serif&family=Abril+Fatface&family=Gloock&family=Bagel+Fat+One&family=Dela+Gothic+One&family=Pinyon+Script&family=Quicksand:wght@400;500;600;700&family=Covered+By+Your+Grace&display=swap" rel="stylesheet">
+<style>
+/* Página de comparação das fontes de título gordo, na paleta aprovada. Todas são Google Fonts com licença livre. */
+:root{
+  --chiclete:#F2609F; --goiaba:#FF6B4A; --algodao:#FFC2E2; --pessego:#FFB59E;
+  --creme:#FFF4E0; --vinho:#5A1830; --lima:#CFDD5A; --pervinca:#8FA6F2; --noite:#3A1220;
+  --bg:#F2609F; --fg:#5A1830;
+  --corpo:'Quicksand',sans-serif; --titulo:'Fraunces',serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box;margin:0}
+html{background:var(--creme)}
+body{font-family:var(--corpo);font-weight:500;color:var(--vinho);background:var(--creme);line-height:1.5;overflow-x:hidden}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.t{font-family:var(--titulo);font-weight:900;font-variation-settings:"SOFT" 100,"opsz" 144;line-height:1.02;letter-spacing:-.01em}
+.grao{position:relative;isolation:isolate}
+.grao::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:5;mix-blend-mode:multiply;opacity:.38;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .35  0 0 0 0 .2  0 0 0 0 .2  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+
+.hero{background:var(--chiclete);padding-block:40px 48px}
+.hero-card{background:var(--creme);padding:28px 28px 30px;max-width:760px;transform:rotate(-.8deg);box-shadow:0 8px 0 rgba(90,24,48,.14)}
+.hero-card h1{font-size:clamp(34px,6vw,58px)}
+.hero-card p{margin-top:12px;max-width:56ch;font-size:16.5px}
+.eyebrow{font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}
+section{padding-block:40px 4px}
+h2.t{font-size:clamp(26px,4.4vw,38px);margin-bottom:10px;text-wrap:balance}
+.lead{max-width:64ch;font-size:16.5px;margin-bottom:20px}
+.note{font-size:13.5px;opacity:.88;margin-top:12px}
+
+/* controles */
+.ctrl{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--creme);padding:12px 0;border-bottom:2px solid rgba(90,24,48,.12)}
+.ctrl .wrap{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center}
+.ctrl label{font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.ctrl input[type=text]{font:inherit;font-weight:600;border:2px solid var(--vinho);background:#fff;color:var(--vinho);border-radius:12px;padding:8px 12px;width:min(100%,300px);min-width:0}
+.ctrl input[type=text]:focus-visible,.chip:focus-visible{outline:3px solid var(--pervinca);outline-offset:2px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:inherit;font-weight:700;font-size:13px;border:2px solid var(--vinho);border-radius:99px;padding:5px 12px 5px 6px;background:#fff;color:var(--vinho);cursor:pointer;display:inline-flex;align-items:center;gap:7px}
+.chip i{width:18px;height:18px;border-radius:50%;box-shadow:inset 0 0 0 2px rgba(90,24,48,.25)}
+.chip[aria-pressed="true"]{background:var(--vinho);color:var(--creme)}
+
+/* cards de fonte */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+@media(max-width:760px){.grid{grid-template-columns:1fr}}
+.fc{background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 6px 0 rgba(90,24,48,.1);display:flex;flex-direction:column;min-width:0}
+.sample{background:var(--bg);color:var(--fg);padding:26px 22px 22px;min-height:206px;display:flex;flex-direction:column;justify-content:space-between;gap:14px;transition:background .15s}
+.sample .big{font-size:clamp(34px,6.2vw,54px);line-height:1.04;overflow-wrap:anywhere}
+.sample .acc{font-size:19px;line-height:1.25}
+.info{padding:14px 18px 16px;display:grid;gap:6px;font-size:14px}
+.info h3{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:baseline;font-family:var(--titulo);font-weight:900;font-variation-settings:"SOFT" 100;font-size:21px}
+.info h3 small{font-family:var(--corpo);font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;opacity:.75}
+.tag{display:inline-block;border-radius:99px;padding:2px 10px;font-size:12px;font-weight:700;background:var(--algodao)}
+.tag.ok{background:var(--lima)}
+.row{display:flex;flex-wrap:wrap;gap:6px}
+
+/* canva */
+.box{background:#fff;border-radius:22px;padding:22px;box-shadow:0 6px 0 rgba(90,24,48,.1)}
+.box.k{background:var(--lima)}
+.box ol{padding-left:20px;display:grid;gap:6px;font-size:15px}
+.voices{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.voices .v{background:#fff;border-radius:20px;padding:18px;box-shadow:0 6px 0 rgba(90,24,48,.1);min-width:0}
+.voices .v b{font-size:12px;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:6px}
+footer{padding:44px 0 60px;font-size:13px;opacity:.8}
+</style>
+
+<header class="hero grao">
+  <div class="wrap">
+    <div class="hero-card">
+      <div class="eyebrow">Marca · letra do título</div>
+      <h1 class="t">Seis finalistas para o título</h1>
+      <p>Os seis escolhidos por você vêm primeiro, com a etiqueta "finalista": Caprasimo, Shrikhand, Alfa Slab One, Young Serif, Gloock e Dela Gothic One. As outras cinco ficam logo abaixo, mais apagadas, caso queira voltar atrás. Todas são Google Fonts de licença livre.</p>
+    </div>
+  </div>
+</header>
+
+<div class="ctrl">
+  <div class="wrap">
+    <label for="txt">Seu texto</label>
+    <input type="text" id="txt" value="Leitura do mês" maxlength="40" autocomplete="off">
+    <div class="chips" id="chips" role="group" aria-label="Cor do fundo"></div>
+  </div>
+</div>
+
+<main class="wrap">
+  <section>
+    <div class="eyebrow">Como ler</div>
+    <h2 class="t">O mesmo título, em cada letra</h2>
+    <p class="lead">Troque o texto e o fundo acima: todas as letras mudam juntas. A segunda linha de cada cartão testa os acentos do português (ação, é, ç, õ), que costumam falhar em fontes de título. Se um acento aparecer em outra letra, a fonte não cobre o português.</p>
+    <div class="grid" id="grid"></div>
+    <p class="note">As leituras abaixo de cada letra são minhas, olhando na tela. Antes de decidir, imprima o título em papel: as letras com contraste alto de espessura (Abril Fatface, Gloock) perdem o traço fino em tamanho pequeno.</p>
+  </section>
+
+  <section>
+    <div class="eyebrow">As outras vozes</div>
+    <h2 class="t">Script, texto e mão</h2>
+    <p class="lead">Estas três já estão no núcleo da marca. Entram aqui para a lista de fontes do Canva ficar completa.</p>
+    <div class="voices">
+      <div class="v"><b>Acento · Pinyon Script</b><div style="font-family:'Pinyon Script',cursive;font-size:44px;line-height:1.1;color:var(--chiclete)" class="vtxt">setembro</div></div>
+      <div class="v"><b>Corpo · Quicksand 500</b><div style="font-size:17px">Texto corrido, fino e redondo. <b style="display:inline;font-size:inherit;letter-spacing:0;text-transform:none">Negrito</b> para uma palavra.</div></div>
+      <div class="v"><b>Mão · Covered By Your Grace</b><div style="font-family:'Covered By Your Grace',cursive;font-size:32px;line-height:1.15;color:var(--goiaba)">migas, cap. 12 me quebrou</div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Canva Pro</div>
+    <h2 class="t">Todas precisam funcionar no Canva</h2>
+    <div class="grid">
+      <div class="box">
+        <h3 class="t" style="font-size:22px;margin-bottom:8px">O que eu consegui confirmar</h3>
+        <ul style="padding-left:18px;display:grid;gap:6px;font-size:14.5px">
+          <li><b>Envio de fonte:</b> a ajuda do Canva diz que Pro, Teams e outros planos podem enviar fontes em OTF, TTF ou WOFF, até 500 por Kit de marca, desde que a licença permita embutir a fonte.</li>
+          <li><b>Biblioteca do Canva:</b> guias de fontes do Canva citam Shrikhand, Alfa Slab One e Bagel Fat One. Não achei menção a Caprasimo nem a Corben, e das outras não verifiquei. São fontes de blog, podem estar desatualizadas.</li>
+          <li>Todas as fontes desta página são livres (licença OFL), que em geral permite o envio. Confirme no arquivo de licença de cada uma.</li>
+        </ul>
+      </div>
+      <div class="box k">
+        <h3 class="t" style="font-size:22px;margin-bottom:8px">Como garantir, em 3 passos</h3>
+        <ol>
+          <li>No Canva da Lissa, escreva o nome da fonte na caixa de texto. Se aparecer, está pronta.</li>
+          <li>Se não aparecer, baixe a fonte em fonts.google.com e envie em Kit de marca, Fontes.</li>
+          <li>Teste com "Ação, é fofoca! ÇÃÕ" e veja se os acentos saem na mesma letra.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+  <footer>Fontes do título · v1 · 2026-10-20 · Projeto Identidade Visual da Trama do Rio.</footer>
+</main>
+
+<script>
+const BGS=[['chiclete','Chiclete','#F2609F','#5A1830'],['goiaba','Goiaba','#FF6B4A','#5A1830'],['algodao','Algodão','#FFC2E2','#5A1830'],['creme','Creme','#FFF4E0','#5A1830'],['vinho','Vinho','#5A1830','#F2609F']];
+const F=[
+ {n:'Fraunces Black',c:'Serifa macia · anos 70',s:"font-family:'Fraunces',serif;font-weight:900;font-variation-settings:'SOFT' 100,'opsz' 144",k:'do sistema',r:'A que já está no núcleo. Firme, macia e com cara de livro. Segura bem frases de 2 a 3 palavras.',cv:'conferir'},
+ {n:'Caprasimo',c:'Serifa macia · estilo Cooper',s:"font-family:'Caprasimo',serif;font-weight:400",r:'A gorda retrô mais clássica, lembra o título do quadro do 06. Acolhedora e com humor. Pesada para frases longas.',cv:'conferir'},
+ {n:'Corben Bold',c:'Serifa redonda',s:"font-family:'Corben',serif;font-weight:700",r:'Gorda sem exagero e mais legível em tamanho médio. Boa para subtítulos e para títulos de duas linhas.',cv:'conferir'},
+ {n:'Shrikhand',c:'Itálica fluida · anos 70',s:"font-family:'Shrikhand',cursive;font-weight:400",r:'Tem a energia de letra de camiseta (referências 01 e 05). Brilha em uma ou duas palavras. Cansa em frase longa.',cv:'citada em guias do Canva'},
+ {n:'Chicle',c:'Retrô alegre · gorda',s:"font-family:'Chicle',cursive;font-weight:400",r:'Letra com a linha de base que dança, como no 03. Tem muito humor, mas é a mais próxima do infantil.',cv:'conferir'},
+ {n:'Alfa Slab One',c:'Slab pesada',s:"font-family:'Alfa Slab One',serif;font-weight:400",r:'Firme e quadrada, na linha da serifa pesada do 12. Menos feminina. Funciona melhor em caixa alta.',cv:'citada em guias do Canva'},
+ {n:'Young Serif',c:'Serifa gorda · editorial',s:"font-family:'Young Serif',serif;font-weight:400",r:'Calma e bem desenhada. Dá o lado "literário" da marca. Tem pouco humor sozinha.',cv:'conferir'},
+ {n:'Abril Fatface',c:'Didone gorda · revista',s:"font-family:'Abril Fatface',serif;font-weight:400",r:'Cara de capa de revista, boa para a ideia de fofoca editorial. Os traços finos somem em tamanho pequeno.',cv:'conferir'},
+ {n:'Gloock',c:'Serifa de alto contraste',s:"font-family:'Gloock',serif;font-weight:400",r:'A mais elegante da lista, menos gorda. Combina com o script do acento. Fica fraca em fundo colorido forte.',cv:'conferir'},
+ {n:'Bagel Fat One',c:'Sans arredondada gordíssima',s:"font-family:'Bagel Fat One',system-ui;font-weight:400",r:'Letra grossa e redonda, na linha do 07. Muito simpática. Corre o risco de parecer infantil.',cv:'citada em guias do Canva'},
+ {n:'Dela Gothic One',c:'Grotesca quadradona',s:"font-family:'Dela Gothic One',system-ui;font-weight:400",r:'A irmã da grotesca gorda do 09. Peso máximo e atitude. Funciona em caixa alta, em poucas palavras.',cv:'conferir'}
+];
+let bg=BGS[0],txt='Leitura do mês';
+const root=document.documentElement;
+function paint(){root.style.setProperty('--bg',bg[2]);root.style.setProperty('--fg',bg[3]);document.querySelectorAll('.bigtxt').forEach(e=>e.textContent=txt||'Leitura do mês');
+ document.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',c.dataset.k===bg[0]?'true':'false'))}
+document.getElementById('chips').innerHTML=BGS.map(b=>`<button class="chip" type="button" data-k="${b[0]}" aria-pressed="false"><i style="background:${b[2]}"></i>${b[1]}</button>`).join('');
+document.getElementById('chips').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;bg=BGS.find(x=>x[0]===b.dataset.k);paint()});
+document.getElementById('txt').addEventListener('input',e=>{txt=e.target.value;paint()});
+const FIN=['Caprasimo','Shrikhand','Alfa Slab One','Young Serif','Gloock','Dela Gothic One'];
+F.forEach(f=>{f.fin=FIN.includes(f.n)});
+F.sort((a,b)=>(b.fin?1:0)-(a.fin?1:0));
+document.getElementById('grid').innerHTML=F.map(f=>`<article class="fc" style="${f.fin?'':'opacity:.55'}"><div class="sample"><div class="big bigtxt" style="${f.s}">Leitura do mês</div><div class="acc" style="${f.s}">Ação, é fofoca! ÇÃÕ 2026</div></div><div class="info"><h3>${f.n}<small>${f.c}</small></h3><p>${f.r}</p><div class="row">${f.fin?`<span class="tag ok">finalista</span>`:''}${f.k?`<span class="tag">${f.k}</span>`:''}<span class="tag">Canva: ${f.cv}</span></div></div></article>`).join('');
+paint();
+</script>

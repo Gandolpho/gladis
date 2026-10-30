@@ -1,0 +1,226 @@
+<title>Ficha por item do kit</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Ficha técnica de cada peça do Presente de Natal da Trama 2026. Fato, sugestão e pendência vêm marcados. */
+:root{
+  --chiclete:#F2609F; --goiaba:#FF6B4A; --cereja:#C63236; --algodao:#FFC2E2; --pessego:#FFB59E;
+  --creme:#FFF4E0; --branquinho:#F6F8FF; --vinho:#5A1830; --noite:#3A1220; --lima:#CFDD5A; --pervinca:#8FA6F2;
+  --titulo:'Alfa Slab One',serif; --corpo:'Quicksand',sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box;margin:0}
+html{background:var(--creme)}
+body{font-family:var(--corpo);font-weight:500;color:var(--vinho);background:var(--creme);line-height:1.5;overflow-x:hidden;font-synthesis-weight:none}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.t{font-family:var(--titulo);font-weight:400;line-height:1.04}
+a{color:var(--cereja);font-weight:600}
+.hero{background:linear-gradient(rgba(143,166,242,.3) 1px,transparent 1px) 0 0/28px 28px,linear-gradient(90deg,rgba(143,166,242,.3) 1px,transparent 1px) 0 0/28px 28px,var(--branquinho);padding-block:40px 44px}
+.hero-card{background:var(--creme);padding:28px 28px 30px;max-width:800px;transform:rotate(-.8deg);box-shadow:0 8px 0 rgba(90,24,48,.14)}
+.hero-card h1{font-size:clamp(32px,5.6vw,54px)}
+.hero-card p{margin-top:12px;max-width:60ch;font-size:16.5px}
+.eyebrow{font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}
+section{padding-block:40px 4px}
+h2.t{font-size:clamp(24px,4.2vw,36px);margin-bottom:10px;text-wrap:balance}
+.lead{max-width:66ch;font-size:16.5px;margin-bottom:18px}
+.note{font-size:13.5px;margin-top:10px;max-width:80ch}
+
+/* legenda e selos */
+.leg{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:16px;font-size:13.5px;font-weight:600}
+.bd{display:inline-block;border-radius:99px;padding:1px 9px;font-size:11.5px;font-weight:700;letter-spacing:.02em;white-space:nowrap;vertical-align:1px}
+.bd.f{background:var(--lima)} .bd.s{background:var(--algodao)} .bd.c{background:var(--pessego)}
+
+/* aviso */
+.alerta{background:var(--cereja);color:var(--creme);border-radius:20px;padding:18px 22px;box-shadow:0 6px 0 rgba(90,24,48,.18);display:grid;gap:4px}
+.alerta b{font-family:var(--titulo);font-weight:400;font-size:21px}
+.alerta p{font-size:15px}
+
+/* resumo */
+.tw{overflow-x:auto;background:#fff;border-radius:20px;box-shadow:0 6px 0 rgba(90,24,48,.1)}
+table{border-collapse:collapse;width:100%;min-width:680px;font-size:14.5px}
+th,td{padding:11px 14px;text-align:left;vertical-align:top;border-bottom:1px solid rgba(90,24,48,.12)}
+th{font-size:12px;letter-spacing:.08em;text-transform:uppercase;background:var(--algodao)}
+tr:last-child td{border-bottom:0}
+td.n{font-family:var(--titulo);font-size:16px}
+
+/* fichas */
+.fichas{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+@media(max-width:820px){.fichas{grid-template-columns:1fr}}
+.ficha{background:#fff;border-radius:22px;box-shadow:0 6px 0 rgba(90,24,48,.1);overflow:hidden;min-width:0;display:flex;flex-direction:column}
+.ficha header{padding:16px 20px;display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.ficha header h3{font-family:var(--titulo);font-weight:400;font-size:24px}
+.ficha header span{font-size:13px;font-weight:700}
+.ficha.e header{background:var(--pessego)} .ficha.c header{background:var(--algodao)} .ficha.m header{background:var(--lima)} .ficha.a header{background:var(--pervinca)} .ficha.o header{background:var(--creme);box-shadow:inset 0 -2px 0 rgba(90,24,48,.12)}
+.ficha dl{padding:6px 20px 16px;display:grid}
+.ficha dl>div{display:grid;grid-template-columns:104px 1fr;gap:12px;padding:9px 0;border-bottom:1px solid rgba(90,24,48,.1);font-size:14px;min-width:0}
+.ficha dl>div:last-child{border-bottom:0}
+.ficha dt{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding-top:2px}
+.ficha dd{min-width:0;overflow-wrap:anywhere}
+@media(max-width:420px){.ficha dl>div{grid-template-columns:1fr;gap:2px}}
+
+/* regras e limites */
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.rule{background:var(--creme);border:2px solid rgba(90,24,48,.14);border-radius:18px;padding:16px 16px 14px;min-width:0}
+.rule b{display:block;font-family:var(--titulo);font-weight:400;font-size:19px;margin-bottom:4px}
+.rule p{font-size:14px}
+
+/* ordem */
+.q{background:#fff;border-radius:22px;padding:20px 22px;box-shadow:0 6px 0 rgba(90,24,48,.1)}
+.q ol{padding-left:22px;display:grid;gap:8px;font-size:15px}
+footer{padding:44px 0 60px;font-size:13px}
+</style>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-card">
+      <div class="eyebrow">Presente de Natal 2026 · entrega em 20/11</div>
+      <h1 class="t">Ficha por item do kit</h1>
+      <p>Medida, sangria, cores, método de impressão e corte de cada peça, para a arte sair já no tamanho e no modo certos. Versão 2, com as suas respostas de 2026-10-20 incorporadas.</p>
+      <div class="leg"><span><span class="bd f">confirmado</span> você disse ou está nas notas</span><span><span class="bd s">sugestão</span> proposta minha</span><span><span class="bd c">a confirmar</span> falta resposta ou arte</span></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section>
+  <div class="alerta">
+    <b>A caneca é a primeira arte</b>
+    <p>Ela é a única peça que sai de casa, na gráfica da Shopee, em sublimação. Se o prazo de produção e de entrega estourar, não dá para refazer em casa. Fechar essa arte antes das outras e ver o prazo do vendedor é o que mais protege a data de 20/11.</p>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">Visão geral</div>
+  <h2 class="t">15 kits, seis peças</h2>
+  <p class="lead">Custo conhecido de R$ 34,14 por kit, sem a bala de coco. Tudo é feito em casa, só a caneca vai para gráfica.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Peça</th><th>Por kit</th><th>Total</th><th>Como é feita</th><th>Arte</th></tr></thead>
+    <tbody>
+      <tr><td class="n">Caneca</td><td>1</td><td>15</td><td>Sublimação, em gráfica da Shopee</td><td>Colorida, a definir</td></tr>
+      <tr><td class="n">Ecobag</td><td>1</td><td>15</td><td>Estêncil cortado na Cricut e tinta de tecido</td><td>Cereja, uma cor</td></tr>
+      <tr><td class="n">Marca-páginas</td><td>2 diferentes</td><td>30</td><td>Impressão em A4, laminação BOPP antes do corte, corte na Cricut. 4 por folha</td><td>A definir</td></tr>
+      <tr><td class="n">Cartela de adesivos</td><td>2 diferentes</td><td>30</td><td>Impressão em vinil branco, laminação BOPP antes do corte, corte na Cricut</td><td>A definir</td></tr>
+      <tr><td class="n">Chaveiro</td><td>1</td><td>15</td><td>Coração de cerâmica fria pintado, sem impressão</td><td>Creme com "Leia Livros" em vermelho</td></tr>
+      <tr><td class="n">Pacote de bala de coco</td><td>1</td><td>15</td><td>Ainda não se sabe se entra</td><td>Sem arte por ora</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">30 marca-páginas a 4 por folha dão 8 folhas (7,5 arredondado para cima). Peça uma folha a mais para teste. Impressora: Brother, modelo a confirmar. Cricut: Maker 4, com "Imprimir e cortar".</p>
+</section>
+
+<section>
+  <div class="eyebrow">Peça por peça</div>
+  <h2 class="t">Ficha de cada item</h2>
+  <div class="fichas">
+
+    <article class="ficha c">
+      <header><h3>Caneca</h3><span>15 peças · gráfica</span></header>
+      <dl>
+        <div><dt>Método</dt><dd><span class="bd f">confirmado</span> Sublimação, na gráfica da Shopee. <span class="bd c">a confirmar</span> O nome do vendedor e o gabarito dele.</dd></div>
+        <div><dt>Medida</dt><dd><span class="bd f">confirmado</span> Considerar 8 × 20 cm. <span class="bd c">a confirmar</span> A medida exata no gabarito do vendedor.</dd></div>
+        <div><dt>Sangria</dt><dd><span class="bd c">a confirmar</span> Pedir o gabarito. <span class="bd s">sugestão</span> 3 mm, e nada importante na área da alça ou na emenda.</dd></div>
+        <div><dt>Cores</dt><dd><span class="bd f">confirmado</span> CMYK e mais de uma cor, em uma ilustração colorida. <span class="bd c">a confirmar</span> Quais cores, quando a arte existir. <span class="bd s">sugestão</span> Na sublimação os tons mudam e o branco é o da própria caneca: não existe "creme" sem imprimir. Pastel e cereja pedem uma caneca de teste.</dd></div>
+        <div><dt>Corte</dt><dd>Não há corte: a impressão dá a volta na caneca.</dd></div>
+        <div><dt>Texto</dt><dd><span class="bd c">a confirmar</span> Ainda não definido. <span class="bd s">sugestão</span> Até 2 linhas curtas, de cerca de 14 caracteres. Um título de 43 caracteres estourou a faixa na página do núcleo.</dd></div>
+        <div><dt>Prazo</dt><dd><span class="bd c">a confirmar</span> Produção e entrega do vendedor. É a arte que precisa ficar pronta mais cedo.</dd></div>
+      </dl>
+    </article>
+
+    <article class="ficha e">
+      <header><h3>Ecobag</h3><span>15 peças</span></header>
+      <dl>
+        <div><dt>Método</dt><dd><span class="bd f">confirmado</span> Estêncil e tinta de tecido.</dd></div>
+        <div><dt>Medida</dt><dd><span class="bd f">confirmado</span> 37 cm de altura por 30 cm de largura. <span class="bd s">sugestão</span> Estampa com 15 a 18 cm de largura (50 a 60%), centrada, com o topo a uns 10 a 12 cm da costura de cima.</dd></div>
+        <div><dt>Sangria</dt><dd>Não tem: o estêncil é aplicado direto no tecido. <span class="bd s">sugestão</span> Margem de 4 cm das costuras.</dd></div>
+        <div><dt>Cores</dt><dd><span class="bd f">confirmado</span> 1 cor: cereja <code>#C63236</code>. Sobre o tecido cru dá 4,2:1. <span class="bd s">sugestão</span> Misture ou compre a tinta e teste numa sobra de tecido, porque a tinta de tecido nem sempre bate com o hex.</dd></div>
+        <div><dt>Corte</dt><dd><span class="bd f">confirmado</span> O estêncil é cortado na Cricut. <span class="bd s">sugestão</span> Letras e formas vazadas (A, R, O e o "do" do logo) precisam de pontes, senão o miolo cai. Detalhe com menos de uns 2 mm tende a rasgar. Evite o fio do script Pinyon em tamanho pequeno.</dd></div>
+        <div><dt>Arte</dt><dd><span class="bd s">sugestão</span> Logo em uma tinta, mais uma frase curta, sem selo cheio e sem padrão. <span class="bd c">a confirmar</span> A frase.</dd></div>
+      </dl>
+    </article>
+
+    <article class="ficha m">
+      <header><h3>Marca-páginas</h3><span>30 peças · 8 folhas</span></header>
+      <dl>
+        <div><dt>Método</dt><dd><span class="bd f">confirmado</span> Impressão em A4, laminação antes do corte e corte na Cricut, com "Imprimir e cortar".</dd></div>
+        <div><dt>Papel</dt><dd><span class="bd f">confirmado</span> Folha sempre A4. <span class="bd c">a confirmar</span> Você pensa em sulfite 180 g. <span class="bd s">sugestão</span> Sulfite sem revestimento absorve a tinta e deixa rosa e cereja mais opacos. Veja no manual da Brother a gramatura máxima e faça um teste.</dd></div>
+        <div><dt>Medida</dt><dd><span class="bd f">confirmado</span> 5 × 15 cm, em 4 colunas por folha. Juntas, as 4 formam um bloco de 20 × 15 cm.</dd></div>
+        <div><dt>Sangria</dt><dd><span class="bd f">confirmado</span> Não precisa, a Cricut corta com precisão. <span class="bd s">sugestão</span> Mantenha texto e logo a 3 mm da borda.</dd></div>
+        <div><dt>Cores</dt><dd><span class="bd c">a confirmar</span> Dependem da arte. Impressão colorida em casa, sem limite técnico.</dd></div>
+        <div><dt>Corte</dt><dd><span class="bd f">confirmado</span> Cricut Maker 4. <span class="bd s">sugestão</span> Use laminação fosca: a brilhante ou a holográfica pode atrapalhar o sensor que lê as marcas de registro.</dd></div>
+        <div><dt>Arte</dt><dd><span class="bd f">confirmado</span> Os dois marca-páginas do kit são diferentes. <span class="bd c">a confirmar</span> A arte de cada um.</dd></div>
+      </dl>
+    </article>
+
+    <article class="ficha a">
+      <header><h3>Cartela de adesivos</h3><span>30 peças</span></header>
+      <dl>
+        <div><dt>Método</dt><dd><span class="bd f">confirmado</span> Impressão em vinil adesivo para impressão, branco, laminação BOPP antes do corte e corte na Cricut. Você tem laminação fosca e holográfica.</dd></div>
+        <div><dt>Medida</dt><dd><span class="bd c">a confirmar</span> Sua vontade é caber 2 cartelas numa A4. <span class="bd s">sugestão</span> Veja o limite do "Imprimir e cortar" mais abaixo: as duas cartelas juntas precisam caber numa área de cerca de 17 × 23 cm. Isso dá 2 cartelas de uns 17 × 11 cm, empilhadas.</dd></div>
+        <div><dt>Sangria</dt><dd><span class="bd f">confirmado</span> Não precisa. Como o vinil é branco, a borda branca em volta do adesivo existe sem imprimir branco. <span class="bd s">sugestão</span> Deixe 2 a 3 mm de borda em cada desenho.</dd></div>
+        <div><dt>Cores</dt><dd><span class="bd c">a confirmar</span> Dependem da arte. <span class="bd s">sugestão</span> A laminação holográfica muda as cores e brilha: teste uma cartela antes.</dd></div>
+        <div><dt>Corte</dt><dd><span class="bd f">confirmado</span> Cricut Maker 4. <span class="bd s">sugestão</span> Corte só o vinil e deixe o fundo, para o adesivo sair da cartela. Fosca é mais segura para o sensor.</dd></div>
+        <div><dt>Arte</dt><dd><span class="bd f">confirmado</span> As duas cartelas de cada kit são diferentes. <span class="bd c">a confirmar</span> A arte de cada uma.</dd></div>
+      </dl>
+    </article>
+
+    <article class="ficha o">
+      <header><h3>Chaveiro</h3><span>15 peças</span></header>
+      <dl>
+        <div><dt>Método</dt><dd><span class="bd f">confirmado</span> Coração de cerâmica fria, pintado. Não leva impressão.</dd></div>
+        <div><dt>Arte</dt><dd><span class="bd f">confirmado</span> Coração em creme com "Leia Livros" em vermelho, no centro. <span class="bd s">sugestão</span> Use o creme <code>#FFF4E0</code> e o cereja <code>#C63236</code> da paleta, que dão 4,9:1 entre si e combinam com a ecobag.</dd></div>
+      </dl>
+    </article>
+
+    <article class="ficha o">
+      <header><h3>Pacote de bala de coco</h3><span>15 peças</span></header>
+      <dl>
+        <div><dt>Estado</dt><dd><span class="bd c">a confirmar</span> Ainda não está definido se entra no kit. Sem arte por enquanto.</dd></div>
+      </dl>
+    </article>
+
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">Limites da Cricut</div>
+  <h2 class="t">O que "Imprimir e cortar" aguenta</h2>
+  <div class="rules">
+    <div class="rule"><b>Tamanho da arte</b><p><span class="bd s">sugestão</span> Cada trabalho tem um limite de tamanho. Uma fonte antiga dá 6,75 × 9,25 pol (17,1 × 23,5 cm). Um blog recente, com as marcas de registro menores, dá até 7,2 × 10,6 pol (18,3 × 27 cm) em A4. <span class="bd c">a confirmar</span> Teste no seu Design Space, com o Maker 4. Fontes: <a href="https://help.cricut.com/hc/en-us/articles/360009426434" target="_blank" rel="noopener">ajuda da Cricut</a> e <a href="https://heyletsmakestuff.com/?p=87478" target="_blank" rel="noopener">um blog</a>.</p></div>
+    <div class="rule"><b>Os 4 marca-páginas</b><p>Um bloco de 20 × 15 cm cabe se for girado, mesmo no limite antigo (15 cm na largura, 20 na altura). <span class="bd s">sugestão</span> Teste com o bloco inteiro antes de imprimir as 8 folhas.</p></div>
+    <div class="rule"><b>As 2 cartelas</b><p>Duas cartelas A5 lado a lado ou empilhadas passam do limite. Cada uma sozinha cabe. Por isso, ou as duas são menores (uns 17 × 11 cm), ou cada cartela usa uma folha inteira e a conta de folhas dobra.</p></div>
+    <div class="rule"><b>Laminação e sensor</b><p>A ajuda da Cricut diz que materiais brilhantes ou holográficos podem atrapalhar o sensor. Soluções que aparecem: reduzir a luz refletida, escurecer as linhas de registro com marcador, ou cobrir as marcas com fita fosca. <span class="bd s">sugestão</span> Use fosca nas peças com mais risco e teste a holográfica antes.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">Vale para todas</div>
+  <h2 class="t">Regras comuns de arquivo</h2>
+  <div class="rules">
+    <div class="rule"><b>Resolução</b><p><span class="bd s">sugestão</span> Arte a 300 dpi no tamanho final. O logo atual tem 429 px: sem o vetorial, ele não serve para imprimir nem para o estêncil.</p></div>
+    <div class="rule"><b>Margens</b><p><span class="bd s">sugestão</span> Texto e logo a 3 mm de qualquer corte. A impressora doméstica não imprime até a borda da folha: deixe 5 mm livres, e confira a margem da Brother no manual.</p></div>
+    <div class="rule"><b>Cor</b><p><span class="bd s">sugestão</span> Em casa, trabalhe em RGB no Canva. Para a caneca, o perfil é CMYK. A paleta muda no papel, na tinta e na sublimação, e o cereja é o que mais pede conferência.</p></div>
+    <div class="rule"><b>Folha de teste</b><p><span class="bd s">sugestão</span> Antes dos 15 kits, imprima uma folha com todas as cores da paleta e o logo, no papel real e com a laminação real. Registre como saiu.</p></div>
+    <div class="rule"><b>Texto mínimo</b><p><span class="bd s">sugestão</span> 8 pt para texto de apoio. Script e letra à mão só em tamanho grande, e nada de texto fino sobre padrão.</p></div>
+    <div class="rule"><b>Arquivos</b><p><span class="bd s">sugestão</span> Um arquivo por peça, com o nome do item, a versão e a data. Guarde o original do Canva.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">Para fechar a ficha</div>
+  <h2 class="t">O que ainda falta saber</h2>
+  <div class="q"><ol>
+    <li>Qual é o modelo da Brother, e qual a gramatura máxima de papel dela?</li>
+    <li>Qual é o vendedor da Shopee, qual o gabarito, o prazo de produção e entrega, e dá para pedir uma caneca de teste?</li>
+    <li>Qual é o tamanho final das duas cartelas, e elas cabem no limite do "Imprimir e cortar" no seu Design Space?</li>
+    <li>A laminação holográfica entra em quais peças? Ela passa no teste do sensor da Cricut?</li>
+    <li>O pacote de bala de coco entra no kit ou não?</li>
+    <li>Qual é a frase da ecobag e qual é o texto da caneca?</li>
+    <li>O marca-páginas vai mesmo em sulfite 180 g? Ele passou no teste de impressão?</li>
+  </ol></div>
+  <p class="note">As artes de caneca, marca-páginas e adesivos ainda não existem, então as cores e o texto delas só se fecham com a arte pronta. Isso é esperado.</p>
+</section>
+
+<footer class="wrap">Ficha por item do kit · v2 · 2026-10-20 · Projeto Identidade Visual da Trama do Rio e Presente de Natal da Trama 2026.</footer>
+</main>

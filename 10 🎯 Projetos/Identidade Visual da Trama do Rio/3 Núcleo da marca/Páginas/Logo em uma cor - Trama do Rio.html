@@ -1,0 +1,231 @@
+<title>Logo carimbo Trama</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Página de teste: o logo em uma cor, como carimbo, sobre as cores e os fundos da paleta aprovada. */
+:root{
+  --chiclete:#F2609F; --algodao:#FFC2E2; --goiaba:#FF6B4A; --pessego:#FFB59E;
+  --creme:#FFF4E0; --vinho:#5A1830; --lima:#CFDD5A; --pervinca:#8FA6F2;
+  /* proposta, ainda não aprovada: versões fundas e segundo fundo escuro */
+  --chiclete-forte:#D63A7C; --chiclete-prof:#B8205A; --goiaba-funda:#C8401F; --oliva:#5E6B14; --pervinca-funda:#4A5FC4; --noite:#3A1220;
+  --titulo:'Young Serif',serif; --corpo:'Quicksand',sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box;margin:0;font-synthesis-weight:none}
+html{background:var(--creme)}
+body{font-family:var(--corpo);font-weight:500;color:var(--vinho);background:var(--creme);line-height:1.5;overflow-x:hidden}
+.t{font-family:var(--titulo);font-weight:900;font-variation-settings:"SOFT" 100,"opsz" 144;line-height:1.02;letter-spacing:-.01em}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.stamp{width:var(--w,120px);aspect-ratio:1;background:var(--c,var(--vinho));-webkit-mask:url(../assets/logo-trama.svg) center/contain no-repeat;mask:url(../assets/logo-trama.svg) center/contain no-repeat;flex:none}
+
+/* padrões e grão (iguais aos da página do núcleo) */
+.xadrez{background:conic-gradient(var(--p1) 25%,var(--p2) 0 50%,var(--p1) 0 75%,var(--p2) 0) 0 0/var(--ps,44px) var(--ps,44px)}
+.listra{background:repeating-linear-gradient(90deg,var(--p1) 0 var(--lw,22px),var(--p2) var(--lw,22px) calc(var(--lw,22px) + 5px))}
+.bolinha{background:radial-gradient(circle at 50% 50%,var(--p2) 0 20%,transparent 21%) 0 0/var(--ps,34px) var(--ps,34px),var(--p1)}
+.grao{position:relative;isolation:isolate}
+.grao::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:5;mix-blend-mode:multiply;opacity:.38;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .35  0 0 0 0 .2  0 0 0 0 .2  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+
+/* topo */
+.hero{background:var(--chiclete);padding-block:40px 48px;position:relative}
+.hero .wrap{display:flex;gap:28px;align-items:center;flex-wrap:wrap}
+.hero-card{background:var(--creme);padding:28px 28px 30px;flex:1 1 360px;min-width:0;transform:rotate(-.8deg);box-shadow:0 8px 0 rgba(90,24,48,.14)}
+.hero-card h1{font-size:clamp(34px,6vw,60px)}
+.hero-card p{margin-top:12px;max-width:50ch;font-size:16.5px}
+.disc{width:210px;height:210px;border-radius:50%;background:var(--vinho);display:grid;place-items:center;flex:none}
+.eyebrow{font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--chiclete-prof);margin-bottom:6px}
+section{padding-block:48px 4px}
+h2.t{font-size:clamp(28px,4.6vw,42px);margin-bottom:10px;text-wrap:balance}
+.lead{max-width:64ch;font-size:16.5px;margin-bottom:22px}
+.note{font-size:13.5px;opacity:.88;margin-top:10px}
+
+/* legenda */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13.5px;font-weight:600;margin-bottom:16px}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.dot{width:14px;height:14px;border-radius:50%;display:inline-block;border:2px solid var(--vinho)}
+.dot.o{background:var(--vinho)} .dot.b{background:linear-gradient(90deg,var(--vinho) 50%,transparent 50%)} .dot.g{background:transparent} .dot.n{background:transparent;border-style:dashed;opacity:.6}
+
+/* matriz */
+.mwrap{overflow-x:auto;padding-bottom:6px}
+.matrix{display:grid;grid-template-columns:96px repeat(var(--n,8),minmax(92px,1fr));gap:6px;min-width:calc(96px + var(--n,8) * 98px)}
+.tok{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:22px}
+.tk{border-radius:16px;padding:14px 14px 12px;min-height:96px;display:flex;flex-direction:column;justify-content:flex-end}
+.tk b{font-family:var(--titulo);font-weight:900;font-variation-settings:"SOFT" 100;font-size:18px}
+.tk small{font-size:12px;font-weight:600}
+.hier3{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:24px}
+.h3{border-radius:20px;padding:16px;display:flex;gap:14px;align-items:center;box-shadow:0 6px 0 rgba(90,24,48,.1)}
+.h3 p{font-size:14px;min-width:0}
+.mh{font-size:12px;font-weight:700;display:flex;align-items:center;gap:6px;padding:2px 4px;min-width:0}
+.mh i{width:16px;height:16px;border-radius:50%;flex:none;box-shadow:inset 0 0 0 2px rgba(90,24,48,.2)}
+.mh.col{flex-direction:column;justify-content:flex-end;align-items:center;text-align:center;gap:4px}
+.cell{border-radius:14px;aspect-ratio:1;display:grid;place-items:center;position:relative;min-width:0}
+.cell .badge{position:absolute;left:6px;bottom:5px;right:6px;display:flex;justify-content:space-between;align-items:center;font-size:10.5px;font-weight:700;background:var(--creme);color:var(--vinho);border-radius:99px;padding:1px 7px;z-index:6}
+.cell.same{background:repeating-linear-gradient(45deg,transparent 0 6px,rgba(90,24,48,.08) 6px 12px);box-shadow:inset 0 0 0 2px rgba(90,24,48,.12)}
+.cell.fraco .stamp{opacity:.95}
+
+/* padrões */
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.pbox{border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 6px 0 rgba(90,24,48,.1)}
+.pbox .pair{display:grid;grid-template-columns:1fr 1fr}
+.pbox .half{height:170px;display:grid;place-items:center;position:relative}
+.pbox .cap{padding:10px 14px 12px;font-size:13.5px;font-weight:600}
+.papel{background:var(--creme);border-radius:50%;width:122px;height:122px;display:grid;place-items:center;box-shadow:0 4px 0 rgba(90,24,48,.14);position:relative;z-index:2}
+.papel.q{border-radius:6px;transform:rotate(-2deg);width:128px;height:128px}
+
+/* tamanhos */
+.sizes{display:flex;flex-wrap:wrap;gap:22px 30px;align-items:flex-end;background:#fff;border-radius:20px;padding:24px;box-shadow:0 6px 0 rgba(90,24,48,.1)}
+.sz{display:flex;flex-direction:column;align-items:center;gap:8px;font-size:12.5px;font-weight:700}
+
+/* sugestão */
+.sug{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.sbox{border-radius:20px;padding:20px 20px 16px;box-shadow:0 6px 0 rgba(90,24,48,.1)}
+.sbox h3{font-family:var(--titulo);font-weight:900;font-variation-settings:"SOFT" 100;font-size:21px;margin-bottom:8px}
+.sbox ul{padding-left:18px;display:grid;gap:6px;font-size:14.5px}
+.sbox.a{background:var(--lima)} .sbox.b{background:var(--pessego)} .sbox.c{background:var(--creme);border:2px dashed var(--chiclete);box-shadow:none}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chip{display:inline-flex;align-items:center;gap:7px;border-radius:99px;padding:4px 10px 4px 5px;font-size:12.5px;font-weight:700}
+.chip i{width:26px;height:26px;border-radius:50%;display:grid;place-items:center}
+footer{padding:44px 0 60px;font-size:13px;opacity:.8}
+</style>
+
+<header class="hero grao">
+  <div class="wrap">
+    <div class="hero-card">
+      <div class="eyebrow">Marca · logo em uma cor</div>
+      <h1 class="t">O logo vira carimbo.</h1>
+      <p>Cada aplicação do logo usa uma tinta só, com o "do" vazado e o traço do pincel mantido. A cor muda conforme o fundo: chiclete como principal, vinho no dia a dia, e goiaba, lima e as outras quando o fundo deixar. Abaixo, cada cor testada sobre cada fundo. A régua vem da conta de contraste, e o olho decide em cima dela.</p>
+    </div>
+    <div class="disc"><div class="stamp" style="--w:176px;--c:var(--creme)"></div></div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section>
+  <div class="eyebrow">01 · A matriz</div>
+  <h2 class="t">Cada cor em cada fundo</h2>
+  <p class="lead">Linhas são os fundos, colunas são as cores do logo. O número em cada quadrado é o contraste entre o logo e o fundo. A diagonal fica vazia, porque o logo sumiria.</p>
+  <div class="legend">
+    <span><i class="dot o"></i>Ótimo · 4,5 ou mais</span>
+    <span><i class="dot b"></i>Bom · 3 a 4,5</span>
+    <span><i class="dot g"></i>Só em tamanho grande · 2 a 3</span>
+    <span><i class="dot n"></i>Evitar · menos de 2</span>
+  </div>
+  <div class="mwrap"><div class="matrix" id="matrix"></div></div>
+  <p class="note">Contraste calculado pela fórmula do WCAG, a partir dos hex da paleta. Logo é elemento gráfico, então 3 ou mais já lê bem. Abaixo disso, depende do tamanho.</p>
+</section>
+
+<section>
+  <div class="eyebrow">02 · Sobre os padrões</div>
+  <h2 class="t">Padrão atrapalha o carimbo</h2>
+  <p class="lead">O logo tem traço fino no "A TRAMA" e no pincel. Em cima de xadrez ou listra ele se perde. À esquerda, o logo direto no padrão. À direita, o logo sobre um selo ou papel creme.</p>
+  <div class="pgrid">
+    <div class="pbox"><div class="pair">
+      <div class="half xadrez" style="--p1:var(--chiclete);--p2:var(--algodao);--ps:36px"><div class="stamp" style="--w:118px"></div></div>
+      <div class="half xadrez" style="--p1:var(--chiclete);--p2:var(--algodao);--ps:36px"><div class="papel"><div class="stamp" style="--w:96px"></div></div></div>
+    </div><div class="cap">Xadrez chiclete e algodão</div></div>
+    <div class="pbox"><div class="pair">
+      <div class="half listra" style="--p1:var(--chiclete);--p2:var(--algodao);--lw:18px"><div class="stamp" style="--w:118px"></div></div>
+      <div class="half listra" style="--p1:var(--chiclete);--p2:var(--algodao);--lw:18px"><div class="papel q"><div class="stamp" style="--w:100px"></div></div></div>
+    </div><div class="cap">Listra chiclete e algodão</div></div>
+    <div class="pbox"><div class="pair">
+      <div class="half bolinha" style="--p1:var(--goiaba);--p2:var(--pessego);--ps:26px"><div class="stamp" style="--w:118px"></div></div>
+      <div class="half bolinha" style="--p1:var(--goiaba);--p2:var(--pessego);--ps:26px"><div class="papel"><div class="stamp" style="--w:96px"></div></div></div>
+    </div><div class="cap">Bolinha goiaba e pêssego</div></div>
+    <div class="pbox"><div class="pair">
+      <div class="half grao" style="background:var(--chiclete)"><div class="stamp" style="--w:118px"></div></div>
+      <div class="half grao" style="background:var(--creme)"><div class="stamp" style="--w:118px;--c:var(--chiclete)"></div></div>
+    </div><div class="cap">Liso com grão: vinho no chiclete, chiclete no creme</div></div>
+  </div>
+  <p class="note">Nos três primeiros o logo é vinho. No último, a segunda metade usa o logo em chiclete sobre creme, para ver a cor de marca no fundo neutro.</p>
+</section>
+
+<section>
+  <div class="eyebrow">03 · Tamanho</div>
+  <h2 class="t">Até onde ele aguenta</h2>
+  <p class="lead">O mesmo logo, vinho sobre creme, em tamanhos decrescentes. Em tela o pincel e o "do" somem abaixo de uns 56 px de largura.</p>
+  <div class="sizes">
+    <div class="sz"><div class="stamp" style="--w:160px"></div>160 px</div>
+    <div class="sz"><div class="stamp" style="--w:112px"></div>112 px</div>
+    <div class="sz"><div class="stamp" style="--w:80px"></div>80 px</div>
+    <div class="sz"><div class="stamp" style="--w:56px"></div>56 px</div>
+    <div class="sz"><div class="stamp" style="--w:40px"></div>40 px</div>
+  </div>
+  <p class="note">O arquivo do logo tem só 429 px, então esta tela não prova nada sobre impressão. Para o kit, imprima um teste do logo pequeno (marca-páginas e adesivo) em casa antes de fechar o tamanho mínimo.</p>
+</section>
+
+<section>
+  <div class="eyebrow">04 · Resultado</div>
+  <h2 class="t">O que a conta recomenda</h2>
+  <p class="lead"><b>Em resumo:</b> o logo em vinho funciona sobre qualquer fundo claro ou vivo (chiclete, goiaba, algodão, pêssego, creme, lima e pervinca). Sobre vinho, funcionam creme, algodão, pêssego, lima, pervinca e goiaba. O chiclete como cor do logo só chega ao "bom" sobre vinho. Sobre creme, ele só aguenta em tamanho grande. As listas abaixo vêm do número da matriz. A decisão estética é sua.</p>
+  <div class="sug" id="sug"></div>
+</section>
+
+<section>
+  <div class="eyebrow">05 · Proposta para decidir</div>
+  <h2 class="t">Versões fundas e vinho noite</h2>
+  <p class="lead">Isto vem de um relatório de acessibilidade que você colou na conversa. Conferi as contas e elas batem. <b>Não é a paleta aprovada.</b> É uma proposta: cada cor viva ganha uma irmã mais funda para usar em fundo claro, e a paleta ganha um segundo fundo escuro. A regra é "viva em fundo escuro, funda em fundo claro".</p>
+  <div class="tok">
+    <div class="tk" style="background:var(--noite);color:var(--creme)"><b>Vinho noite</b><span>#3A1220</span><small>fundo escuro extra</small></div>
+    <div class="tk" style="background:var(--chiclete-forte);color:var(--creme)"><b>Chiclete forte</b><span>#D63A7C</span><small>rosa para fundo claro</small></div>
+    <div class="tk" style="background:var(--chiclete-prof);color:var(--creme)"><b>Chiclete profundo</b><span>#B8205A</span><small>rosa mais seguro</small></div>
+    <div class="tk" style="background:var(--goiaba-funda);color:var(--creme)"><b>Goiaba funda</b><span>#C8401F</span><small>coral para fundo claro</small></div>
+    <div class="tk" style="background:var(--oliva);color:var(--creme)"><b>Oliva</b><span>#5E6B14</span><small>lima para fundo claro</small></div>
+    <div class="tk" style="background:var(--pervinca-funda);color:var(--creme)"><b>Pervinca funda</b><span>#4A5FC4</span><small>pervinca para fundo claro</small></div>
+  </div>
+  <div class="mwrap"><div class="matrix" id="matrix2" style="--n:9"></div></div>
+  <p class="note">Mesma régua da matriz acima. O chiclete forte fica em 2,96 sobre algodão e sobre vinho, ou seja, só em tamanho grande. Em fundo claro, o chiclete profundo é o mais seguro (4,15 sobre algodão). Compare o chiclete forte com o chiclete aprovado: ele é mais escuro, então a sensação de rosa forte muda.</p>
+  <div class="hier3">
+    <div class="h3" style="background:var(--algodao)"><div class="stamp" style="--w:84px;--c:var(--chiclete)"></div><p><b>Principal</b><br>logo chiclete sobre algodão-doce, em tamanho grande. Contraste baixo (2,0), aceito por decisão de marca.</p></div>
+    <div class="h3" style="background:#fff"><div class="stamp" style="--w:84px;--c:var(--vinho)"></div><p><b>Uso corrente</b><br>logo vinho, que passa em todos os fundos da paleta.</p></div>
+    <div class="h3" style="background:var(--creme);box-shadow:inset 0 0 0 2px rgba(90,24,48,.12)"><div class="stamp" style="--w:84px;--c:var(--chiclete-forte)"></div><p><b>Variações</b><br>goiaba, lima e pervinca sobre vinho ou vinho noite. Sobre fundo claro, as versões fundas (chiclete forte, goiaba funda, oliva, pervinca funda). Para campanha ou livro do mês.</p></div>
+  </div>
+  <p class="note" style="margin-top:14px">Duas coisas que o relatório não resolve. A primeira é o daltonismo: fora o vinho, as cores só se separam pelo matiz, então o logo nunca deve ser a única informação por cor. A segunda é o grão: o overlay escurece o fundo, e valores perto do limite (vinho sobre chiclete, 4,3) precisam ser conferidos no render e no papel.</p>
+</section>
+
+<footer>Logo carimbo · v2 · 2026-10-20 · Projeto Identidade Visual da Trama do Rio.</footer>
+</main>
+
+<script>
+const C=[['chiclete','Chiclete','#F2609F'],['goiaba','Goiaba','#FF6B4A'],['algodao','Algodão','#FFC2E2'],['pessego','Pêssego','#FFB59E'],['creme','Creme','#FFF4E0'],['vinho','Vinho','#5A1830'],['lima','Lima','#CFDD5A'],['pervinca','Pervinca','#8FA6F2']];
+const lum=h=>{const f=v=>{v/=255;return v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4)};const n=parseInt(h.slice(1),16);return .2126*f(n>>16)+.7152*f((n>>8)&255)+.0722*f(n&255)};
+const cr=(a,b)=>{const x=lum(a),y=lum(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05)};
+const rate=r=>r>=4.5?['o','ótimo']:r>=3?['b','bom']:r>=2?['g','grande']:['n','evitar'];
+const fmt=r=>r.toFixed(1).replace('.',',');
+const dotIcon=k=>`<i class="dot ${k}" style="width:11px;height:11px;border-width:1.6px"></i>`;
+let h='<div></div>'+C.map(c=>`<div class="mh col"><i style="background:${c[2]}"></i>${c[1]}</div>`).join('');
+const good={};
+C.forEach(bg=>{
+  h+=`<div class="mh"><i style="background:${bg[2]}"></i>${bg[1]}</div>`;
+  C.forEach(lg=>{
+    if(bg[0]===lg[0]){h+='<div class="cell same"></div>';return}
+    const r=cr(bg[2],lg[2]),[k,t]=rate(r);
+    (good[bg[0]]=good[bg[0]]||[]).push({lg,r,k,t});
+    h+=`<div class="cell ${k==='n'?'fraco':''}" style="background:${bg[2]}"><div class="stamp" style="--w:62px;--c:${lg[2]}"></div><div class="badge"><span>${fmt(r)}</span>${dotIcon(k)}</div></div>`;
+  });
+});
+document.getElementById('matrix').innerHTML=h;
+
+const chip=(g)=>`<span class="chip" style="background:var(--creme);box-shadow:inset 0 0 0 2px rgba(90,24,48,.12)"><i style="background:${g.lg[2]};box-shadow:inset 0 0 0 2px rgba(90,24,48,.2)"></i>${g.lg[1]} ${fmt(g.r)}</span>`;
+const lista=(ks)=>C.map(bg=>{const l=(good[bg[0]]||[]).filter(g=>ks.includes(g.k));return l.length?`<li><b>Sobre ${bg[1].toLowerCase()}:</b> ${l.map(g=>g.lg[1].toLowerCase()).join(', ')}</li>`:`<li><b>Sobre ${bg[1].toLowerCase()}:</b> nenhuma</li>`}).join('');
+document.getElementById('sug').innerHTML=
+ `<div class="sbox a"><h3>Ótimo (4,5 ou mais)</h3><ul>${lista(['o'])}</ul></div>`+
+ `<div class="sbox b"><h3>Bom (3 a 4,5)</h3><ul>${lista(['b'])}</ul></div>`+
+ `<div class="sbox c"><h3>Só em tamanho grande ou evitar</h3><ul>${lista(['g','n'])}</ul></div>`;
+
+// proposta: versões fundas e vinho noite
+const BG2=[['noite','Vinho noite','#3A1220'],['vinho','Vinho','#5A1830'],['creme','Creme','#FFF4E0'],['algodao','Algodão','#FFC2E2'],['pessego','Pêssego','#FFB59E'],['lima','Lima','#CFDD5A']];
+const LG2=[['chiclete','Chiclete','#F2609F'],['cf','Chiclete forte','#D63A7C'],['cp','Chiclete profundo','#B8205A'],['goiaba','Goiaba','#FF6B4A'],['gf','Goiaba funda','#C8401F'],['lima','Lima','#CFDD5A'],['oliva','Oliva','#5E6B14'],['pervinca','Pervinca','#8FA6F2'],['pf','Pervinca funda','#4A5FC4']];
+let h2='<div></div>'+LG2.map(c=>`<div class="mh col"><i style="background:${c[2]}"></i>${c[1]}</div>`).join('');
+BG2.forEach(bg=>{
+  h2+=`<div class="mh"><i style="background:${bg[2]}"></i>${bg[1]}</div>`;
+  LG2.forEach(lg=>{
+    if(bg[2]===lg[2]){h2+='<div class="cell same"></div>';return}
+    const r=cr(bg[2],lg[2]),[k]=rate(r);
+    h2+=`<div class="cell" style="background:${bg[2]}"><div class="stamp" style="--w:62px;--c:${lg[2]}"></div><div class="badge"><span>${fmt(r)}</span>${dotIcon(k)}</div></div>`;
+  });
+});
+document.getElementById('matrix2').innerHTML=h2;
+</script>

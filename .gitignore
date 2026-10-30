@@ -1,0 +1,11 @@
+# Dados internos da Trinks: ficam só no computador de trabalho
+50 🗃️ Fontes Brutas/lista_transacoes_*.csv
+80 🤖 AIOS/Skills da Conta/escrita-ux/references/produtos/guia-trinks.md
+90 📦 Arquivo/Trinks - Trinks IA/
+
+# Locais de cada máquina
+.claude/settings.local.json
+.obsidian/workspace*.json
+desktop.ini
+Thumbs.db
+*.tmp

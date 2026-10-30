@@ -1,0 +1,14 @@
+---
+tipo: pessoa
+contexto: carreira
+papel: Product Designer
+tags: []
+---
+
+# Julie Silva
+
+## Quem é
+Product Designer do time de design. Ver [[Pessoas da Trinks]].
+
+## Como trabalhamos
+Contato menos próximo.

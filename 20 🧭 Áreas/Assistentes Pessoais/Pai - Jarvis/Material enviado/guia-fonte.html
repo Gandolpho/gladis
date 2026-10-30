@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Como montar o seu Jarvis</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1b2233; --muted: #555d6e; --line: #e6e1d6;
+    --navy: #1f2a44; --navy-2: #34456b; --gold: #b8862b; --gold-soft: #f6eedd; --cream: #fbf8f2;
+    --red: #8a1c1c; --red-soft: #fbefed;
+  }
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { font-family: "Inter", "Segoe UI", Arial, sans-serif; color: var(--ink); background: #d9dce3; font-size: 12.5pt; line-height: 1.5; }
+  .page { width: 210mm; height: 297mm; background: #fff; margin: 10mm auto; padding: 18mm 19mm 14mm; overflow: hidden; display: flex; flex-direction: column; break-after: page; }
+  body.png { background: #fff; } body.png .page { margin: 0; }
+  @media print { body { background: #fff; } .page { margin: 0; } }
+
+  .kicker { font-size: 10pt; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); }
+  h1 { font-size: 34pt; line-height: 1.05; font-weight: 800; letter-spacing: -.02em; color: var(--navy); margin-top: 3mm; }
+  h2 { font-size: 23pt; line-height: 1.15; font-weight: 800; color: var(--navy); margin-top: 2mm; }
+  h3 { font-size: 14pt; font-weight: 700; color: var(--navy); }
+  .lead { font-size: 14pt; color: var(--muted); margin-top: 3mm; line-height: 1.45; }
+  .num { font-size: 10pt; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); }
+  section + section { margin-top: 8mm; }
+  .foot { margin-top: auto; padding-top: 5mm; border-top: 1px solid var(--line); display: flex; justify-content: space-between; font-size: 9pt; color: #8a8f9c; }
+
+  .box { border-radius: 4mm; padding: 6mm 7mm; }
+  .cream { background: var(--cream); border: 1px solid var(--line); }
+  .goldb { background: var(--gold-soft); }
+  .redb { background: var(--red-soft); border-left: 4px solid var(--red); border-radius: 0 4mm 4mm 0; }
+
+  .flow { display: grid; grid-template-columns: 1fr 10mm 1fr 10mm 1fr; align-items: center; margin-top: 6mm; }
+  .node { background: var(--cream); border: 1px solid var(--line); border-radius: 4mm; padding: 5mm; text-align: center; height: 100%; display: flex; flex-direction: column; justify-content: center; }
+  .node.dark { background: var(--navy); color: #fff; border: 0; }
+  .node.dark small { color: #c9d0e0; }
+  .node b { font-size: 13.5pt; display: block; }
+  .node small { font-size: 10.5pt; color: var(--muted); display: block; margin-top: 1mm; line-height: 1.35; }
+  .arr { text-align: center; color: var(--gold); font-size: 18pt; font-weight: 700; }
+
+  .ben { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; }
+  .ben .box { padding: 5mm; }
+  .ben h3 { font-size: 12.5pt; margin-bottom: 1.5mm; }
+  .ben p { font-size: 11pt; color: var(--muted); line-height: 1.4; }
+
+  .uses { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; margin-top: 6mm; }
+  .use { border: 1px solid var(--line); border-radius: 4mm; padding: 6mm; display: flex; flex-direction: column; gap: 3mm; }
+  .use p { font-size: 11.5pt; color: var(--muted); }
+  .ask { background: var(--gold-soft); border-radius: 3mm; padding: 3mm 4mm; font-size: 11.5pt; margin-top: auto; }
+  .ask b { display: block; font-size: 8.5pt; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); margin-bottom: .8mm; }
+  .ask + .ask { margin-top: 0; }
+
+  ul.list { list-style: none; }
+  ul.list li { padding-left: 7mm; position: relative; font-size: 12.5pt; }
+  ul.list li + li { margin-top: 3mm; }
+  ul.list li::before { content: "✓"; position: absolute; left: 0; color: var(--gold); font-weight: 800; }
+  ul.no li::before { content: "✕"; color: var(--red); }
+
+  .steps { counter-reset: s; display: grid; gap: 5mm; margin-top: 6mm; }
+  .step { display: grid; grid-template-columns: 11mm 1fr; gap: 4mm; align-items: start; }
+  .step::before { counter-increment: s; content: counter(s); width: 10mm; height: 10mm; border-radius: 50%; background: var(--navy); color: #fff; font-weight: 800; font-size: 13pt; display: flex; align-items: center; justify-content: center; }
+  .step b { display: block; font-size: 13.5pt; color: var(--navy); }
+  .step span { font-size: 12pt; color: var(--muted); }
+  .say { display: inline-block; background: var(--gold-soft); color: var(--ink); border-radius: 2mm; padding: .5mm 2.5mm; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<!-- 1 -->
+<div class="page">
+  <div class="kicker">Um guia rápido para o pai · da Julia</div>
+  <h1>Como montar<br>o seu Jarvis</h1>
+  <p class="lead">Um assistente que conhece a sua clínica, lembra do que vocês já combinaram e ajuda no dia a dia.</p>
+
+  <section style="margin-top:10mm">
+    <h3>O que muda</h3>
+    <p style="margin-top:2mm">Hoje, cada conversa com o Claude começa do zero: você precisa explicar tudo de novo. Com o Jarvis, o Claude passa a ter um <b>caderno de anotações</b>, que é uma pasta no seu Google Drive. Ali ele guarda o que importa sobre a clínica e sobre você, e consulta antes de responder.</p>
+  </section>
+
+  <section>
+    <div class="flow">
+      <div class="node"><b>Você</b><small>conversa normalmente, como já faz hoje</small></div>
+      <div class="arr">&rarr;</div>
+      <div class="node dark"><b>Jarvis</b><small>o Claude, consultando o caderno antes de responder</small></div>
+      <div class="arr">&harr;</div>
+      <div class="node"><b>Pasta "Jarvis"</b><small>o caderno, guardado no seu Google Drive</small></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="ben">
+      <div class="box goldb"><h3>Não precisa repetir</h3><p>Ele já sabe como a clínica funciona, quem é a equipe e quem são os fornecedores.</p></div>
+      <div class="box goldb"><h3>Não esquece</h3><p>Decisões, combinados e pendências ficam anotados, com data.</p></div>
+      <div class="box goldb"><h3>Se organiza sozinho</h3><p>Você só conversa. Ele mesmo cria e atualiza as anotações.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="box cream">
+      <h3>Precisa instalar alguma coisa?</h3>
+      <p style="margin-top:2mm">Só o Google Drive para computador, se ainda não tiver. O Claude é o mesmo aplicativo que você já usa. Como o caderno fica no Drive, o Jarvis funciona em qualquer computador seu. A montagem leva uns 15 minutos de conversa, e quem faz o trabalho é ele.</p>
+    </div>
+  </section>
+
+  <div class="foot"><span>Como montar o seu Jarvis</span><span>1</span></div>
+</div>
+
+<!-- 2 -->
+<div class="page">
+  <div class="num">O que ele faz por você</div>
+  <h2>Na clínica e fora dela</h2>
+  <p class="lead">Alguns exemplos do que dá para pedir. Quanto mais ele sabe, melhor fica.</p>
+
+  <div class="uses">
+    <div class="use">
+      <h3>Equipe e processos</h3>
+      <p>Funções, escalas e o passo a passo de cada rotina da clínica.</p>
+      <div class="ask"><b>Você pede</b>"Escreve o passo a passo de abertura da clínica para a recepcionista nova."</div>
+    </div>
+    <div class="use">
+      <h3>Financeiro e fornecedores</h3>
+      <p>Orçamentos, compras, contatos e o que foi combinado com cada fornecedor.</p>
+      <div class="ask"><b>Você pede</b>"Compara esses três orçamentos e me diz qual vale mais a pena."</div>
+    </div>
+    <div class="use">
+      <h3>Marketing</h3>
+      <p>Serviços, pacotes, preços e o jeito da clínica falar com o público.</p>
+      <div class="ask"><b>Você pede</b>"Cria quatro posts para o Instagram sobre o pacote de verão."</div>
+    </div>
+    <div class="use">
+      <h3>Sua rotina</h3>
+      <p>Pendências, lembretes e as decisões do dia a dia.</p>
+      <div class="ask"><b>Você pede</b>"O que ficou pendente esta semana?"</div>
+    </div>
+  </div>
+
+  <section>
+    <div class="box goldb">
+      <h3>Duas frases que fazem tudo funcionar</h3>
+      <ul class="list" style="margin-top:3mm">
+        <li><span class="say">"Jarvis, anota isso."</span> Sempre que decidir ou combinar algo, ele guarda no caderno.</li>
+        <li><span class="say">"Jarvis, o que temos sobre...?"</span> Ele procura no caderno antes de responder.</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="foot"><span>Como montar o seu Jarvis</span><span>2</span></div>
+</div>
+
+<!-- 3 -->
+<div class="page">
+  <div class="num">Cuidados</div>
+  <h2>O que nunca vai para o Jarvis</h2>
+  <p class="lead">O caderno fica no seu Google Drive, e o que o Jarvis lê passa pelo Claude. Por isso, algumas coisas ficam de fora.</p>
+
+  <section style="margin-top:8mm">
+    <div class="box redb">
+      <h3 style="color:var(--red)">Dados de pacientes, nunca</h3>
+      <p style="margin-top:2mm">Nome, telefone, fotos, prontuário, histórico de saúde. Pela LGPD, dados de saúde são os mais protegidos que existem. Para marketing, use exemplos sem identificar ninguém.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="box cream">
+      <h3>Também ficam de fora</h3>
+      <ul class="list no" style="margin-top:3mm">
+        <li>Senhas e códigos de acesso</li>
+        <li>Dados bancários e de cartão</li>
+        <li>Documentos e contratos sigilosos inteiros (vale um resumo)</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h3>E vale lembrar</h3>
+    <ul class="list" style="margin-top:3mm">
+      <li><b>O Claude só acessa a pasta que você escolher.</b> O resto do computador e do Drive fica de fora.</li>
+      <li><b>Um computador por vez.</b> Evite usar o Jarvis em dois computadores ao mesmo tempo, para o Drive não criar cópias repetidas.</li>
+      <li><b>Confira a privacidade:</b> nas configurações do Claude, em Privacidade, deixe desligada a opção de usar suas conversas para melhorar o Claude.</li>
+      <li><b>O Jarvis pode errar.</b> Em números, valores e decisões importantes, confira antes de usar.</li>
+    </ul>
+  </section>
+
+  <div class="foot"><span>Como montar o seu Jarvis</span><span>3</span></div>
+</div>
+
+<!-- 4 -->
+<div class="page">
+  <div class="num">Como montar</div>
+  <h2>Cinco passos, uns 15 minutos</h2>
+  <p class="lead">Você precisa do aplicativo do Claude, do Google Drive para computador e dos arquivos que eu mandei: o "Kit Jarvis" e as habilidades.</p>
+
+  <div class="steps">
+    <div class="step"><div><b>Crie a pasta "Jarvis" no Google Drive</b><span>Com o Google Drive para computador instalado, crie a pasta dentro de "Meu Drive". Ela pode ficar vazia.</span></div></div>
+    <div class="step"><div><b>Abra o Claude e escolha "Cowork"</b><span>É uma das opções do aplicativo, ao lado do chat. Quando ele pedir uma pasta, escolha a pasta Jarvis.</span></div></div>
+    <div class="step"><div><b>Envie o "Kit Jarvis" e as habilidades</b><span>Arraste todos os arquivos juntos para a conversa e escreva: <span class="say">"Leia este arquivo e monte o meu Jarvis."</span></span></div></div>
+    <div class="step"><div><b>Responda as perguntas dele</b><span>Ele vai perguntar sobre você, a clínica, a equipe e a sua rotina. Pode responder do seu jeito, e o que não souber, pode pular.</span></div></div>
+    <div class="step"><div><b>Pronto. Agora é só usar</b><span>Volte sempre pelo Cowork, com a pasta Jarvis, e comece a conversa com <span class="say">"Jarvis, ..."</span></span></div></div>
+  </div>
+
+  <section style="margin-top:9mm">
+    <div class="box goldb">
+      <h3>Se algo não sair como esperado</h3>
+      <p style="margin-top:2mm">Diga para ele: <span class="say">"Jarvis, lê o seu manual."</span> O manual é um arquivo que ele mesmo cria na pasta, com tudo o que precisa saber. E qualquer dúvida, me liga.</p>
+    </div>
+  </section>
+
+  <div class="foot"><span>Com carinho, Julia</span><span>4</span></div>
+</div>
+
+<script>if (location.search.indexOf('png') > -1) document.body.classList.add('png');</script>
+</body>
+</html>

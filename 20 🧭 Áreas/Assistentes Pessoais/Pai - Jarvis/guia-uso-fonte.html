@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Como usar o Jarvis</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --ink: #1b2233; --muted: #555d6e; --line: #e6e1d6; --navy: #1f2a44; --gold: #b8862b; --gold-soft: #f6eedd; --cream: #fbf8f2; --red: #8a1c1c; --red-soft: #fbefed; --ok: #2f5d8a; --ok-soft: #eef3f9; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Inter", "Segoe UI", Arial, sans-serif; color: var(--ink); background: #fff; }
+  .card { width: 1080px; padding: 70px 76px 64px; display: flex; flex-direction: column; }
+  .kicker { font-size: 18px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); }
+  h1 { font-size: 64px; line-height: 1.04; font-weight: 800; letter-spacing: -.02em; color: var(--navy); margin-top: 12px; }
+  .sub { font-size: 26px; line-height: 1.4; color: var(--muted); margin-top: 18px; }
+  .sub b { color: var(--navy); }
+  .label { font-size: 16px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+  section { margin-top: 42px; }
+
+  .flow { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+  .step { background: var(--cream); border: 1.5px solid var(--line); border-radius: 16px; padding: 20px 20px 22px; }
+  .n { width: 46px; height: 46px; border-radius: 50%; background: var(--navy); color: #fff; font-weight: 800; font-size: 21px; display: flex; align-items: center; justify-content: center; }
+  .step h3 { font-size: 22px; font-weight: 700; color: var(--navy); margin-top: 14px; }
+  .step p { font-size: 18px; line-height: 1.38; color: var(--muted); margin-top: 6px; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 12px; }
+  .chip { background: var(--navy); color: #fff; border-radius: 999px; padding: 13px 22px; font-size: 20px; font-weight: 500; }
+  .chip::before { content: "“"; color: #f0d39a; font-weight: 800; margin-right: 2px; }
+  .chip::after { content: "”"; color: #f0d39a; font-weight: 800; margin-left: 2px; }
+  .chip small { display: none; }
+
+  .day { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+  .d { background: var(--gold-soft); border-radius: 16px; padding: 18px 20px; }
+  .d h3 { font-size: 21px; font-weight: 700; color: var(--navy); }
+  .d p { font-size: 18px; color: var(--muted); margin-top: 6px; line-height: 1.38; }
+
+  .watch { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .col { border-radius: 16px; padding: 20px 22px; }
+  .col.ok { background: var(--ok-soft); }
+  .col.bad { background: var(--red-soft); }
+  .col h3 { font-size: 21px; font-weight: 700; margin-bottom: 10px; }
+  .col.ok h3 { color: var(--ok); }
+  .col.bad h3 { color: var(--red); }
+  .col li { list-style: none; font-size: 18px; line-height: 1.38; padding-left: 26px; position: relative; margin-top: 8px; }
+  .col.ok li::before { content: "✓"; position: absolute; left: 0; color: var(--ok); font-weight: 800; }
+  .col.bad li::before { content: "!"; position: absolute; left: 6px; color: var(--red); font-weight: 800; }
+  .col li b { color: var(--navy); }
+
+  .warn { margin-top: 28px; background: var(--red-soft); border-left: 6px solid var(--red); border-radius: 0 14px 14px 0; padding: 18px 24px; font-size: 20px; line-height: 1.4; }
+  .warn b { color: var(--red); }
+
+  .cta { margin-top: 36px; background: var(--navy); color: #fff; border-radius: 18px; padding: 26px 30px; font-size: 22px; line-height: 1.45; }
+  .cta b { color: #f0d39a; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="kicker">Para o pai · da Julia</div>
+  <h1>Como usar o Jarvis</h1>
+  <p class="sub">Pense nele como <b>um secretário com um caderno</b>. Você conversa, ele anota, organiza e lembra. Você não precisa explicar tudo de novo.</p>
+
+  <section>
+    <div class="label">Como funciona</div>
+    <div class="flow">
+      <div class="step"><div class="n">1</div><h3>Você fala</h3><p>Do seu jeito, escrito ou por voz. Não tem jeito certo de pedir.</p></div>
+      <div class="step"><div class="n">2</div><h3>Ele anota</h3><p>Guarda tudo na pasta Jarvis, no seu computador. É o caderno dele.</p></div>
+      <div class="step"><div class="n">3</div><h3>Ele lembra</h3><p>Na próxima conversa, ele lê o caderno e já sabe onde vocês pararam.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="label">Você pode pedir assim</div>
+    <div class="chips">
+      <div class="chip">Anota que preciso ligar pro contador</div>
+      <div class="chip">O que tenho pra hoje?</div>
+      <div class="chip">O que eu faço agora?</div>
+      <div class="chip">Fiz a reunião com o fornecedor</div>
+      <div class="chip">Resume esse relatório</div>
+      <div class="chip">Compara esses dois orçamentos</div>
+      <div class="chip">Escreve uma mensagem pra equipe</div>
+      <div class="chip">Resumo da semana</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="label">No dia a dia</div>
+    <div class="day">
+      <div class="d"><h3>De manhã</h3><p>Abra o Jarvis e veja as tarefas do dia. Ele mostra sem você pedir.</p></div>
+      <div class="d"><h3>Durante o dia</h3><p>Lembrou de algo? Conte pra ele na hora, antes de esquecer.</p></div>
+      <div class="d"><h3>Na sexta</h3><p>Peça o resumo da semana. Ele mostra o que foi feito e o que ficou.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="label">Fique de olho</div>
+    <div class="watch">
+      <div class="col ok">
+        <h3>Está funcionando quando...</h3>
+        <ul>
+          <li>Ele lembra do que vocês combinaram em outro dia.</li>
+          <li>Mostra as tarefas de manhã sem você pedir.</li>
+          <li>Avisa o que anotou e onde.</li>
+          <li>Fala simples, sem palavras técnicas.</li>
+        </ul>
+      </div>
+      <div class="col bad">
+        <h3>Algo está errado quando...</h3>
+        <ul>
+          <li>Diz que <b>não consegue salvar</b> ou pede pra conectar GitHub. Abra pelo app, na aba Code.</li>
+          <li>Esqueceu algo anotado. Diga: <b>"lê o seu manual"</b>.</li>
+          <li>Ficou técnico demais. Diga: <b>"fala mais simples e anota isso"</b>.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta">Na dúvida, fale com ele como falaria com uma pessoa. <b>E se travar, me chama.</b></div>
+</div>
+</body>
+</html>

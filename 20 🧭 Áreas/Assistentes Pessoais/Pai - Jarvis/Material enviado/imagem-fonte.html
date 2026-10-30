@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Seu Jarvis</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --ink: #1b2233; --muted: #555d6e; --line: #e6e1d6; --navy: #1f2a44; --gold: #b8862b; --gold-soft: #f6eedd; --cream: #fbf8f2; --red: #8a1c1c; --red-soft: #fbefed; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Inter", "Segoe UI", Arial, sans-serif; color: var(--ink); background: #fff; }
+  .card { width: 1080px; height: 1320px; padding: 70px 76px 64px; display: flex; flex-direction: column; }
+  .kicker { font-size: 18px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); }
+  h1 { font-size: 66px; line-height: 1.04; font-weight: 800; letter-spacing: -.02em; color: var(--navy); margin-top: 12px; }
+  .sub { font-size: 27px; line-height: 1.4; color: var(--muted); margin-top: 18px; }
+  .label { font-size: 16px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+
+  .how { margin-top: 44px; display: grid; gap: 14px; }
+  .row { display: grid; grid-template-columns: 54px 1fr; gap: 18px; align-items: center; background: var(--cream); border: 1.5px solid var(--line); border-radius: 16px; padding: 18px 22px; }
+  .n { width: 54px; height: 54px; border-radius: 50%; background: var(--navy); color: #fff; font-weight: 800; font-size: 24px; display: flex; align-items: center; justify-content: center; }
+  .row p { font-size: 23px; line-height: 1.35; }
+  .row b { color: var(--navy); }
+
+  .uses { margin-top: 40px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .u { background: var(--gold-soft); border-radius: 16px; padding: 18px 22px; }
+  .u h3 { font-size: 22px; font-weight: 700; color: var(--navy); }
+  .u p { font-size: 18px; color: var(--muted); margin-top: 4px; line-height: 1.35; }
+
+  .warn { margin-top: 28px; background: var(--red-soft); border-left: 6px solid var(--red); border-radius: 0 14px 14px 0; padding: 18px 24px; font-size: 21px; line-height: 1.4; }
+  .warn b { color: var(--red); }
+
+  .cta { margin-top: auto; background: var(--navy); color: #fff; border-radius: 18px; padding: 26px 30px; font-size: 22px; line-height: 1.45; }
+  .cta b { color: #f0d39a; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="kicker">Para o pai · da Julia</div>
+  <h1>Seu Jarvis</h1>
+  <p class="sub">Um assistente que conhece a sua clínica e não esquece o que vocês já combinaram.</p>
+
+  <div class="how">
+    <div class="label">Como funciona</div>
+    <div class="row"><div class="n">1</div><p>Uma <b>pasta no seu Google Drive</b> vira o caderno de anotações do Claude.</p></div>
+    <div class="row"><div class="n">2</div><p>Antes de responder, <b>ele consulta o caderno</b>. Você não precisa explicar tudo de novo.</p></div>
+    <div class="row"><div class="n">3</div><p><b>Ele mesmo anota e organiza.</b> Você só conversa.</p></div>
+  </div>
+
+  <div class="uses">
+    <div class="label">Ajuda com</div>
+    <div class="grid">
+      <div class="u"><h3>Equipe e processos</h3><p>Escalas, funções, passo a passo das rotinas</p></div>
+      <div class="u"><h3>Financeiro e fornecedores</h3><p>Orçamentos, compras, combinados</p></div>
+      <div class="u"><h3>Marketing</h3><p>Posts, campanhas, pacotes</p></div>
+      <div class="u"><h3>Sua rotina</h3><p>Pendências, lembretes, decisões</p></div>
+    </div>
+  </div>
+
+  <div class="warn"><b>Nunca coloque dados de pacientes</b> (nome, fotos, prontuário). Nem senhas ou dados bancários.</div>
+
+  <div class="cta">Para montar: crie a pasta <b>Jarvis</b> no Google Drive, abra o Claude no <b>Cowork</b>, escolha essa pasta, envie o <b>Kit Jarvis</b> e as habilidades e diga: <b>"Leia este arquivo e monte o meu Jarvis."</b></div>
+</div>
+</body>
+</html>

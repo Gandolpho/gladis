@@ -1,0 +1,96 @@
+filters:
+  and:
+    - 'tipo == "receita"'
+    - 'file.inFolder("GLADIS/20 🧭 Áreas/Minha Cozinha/Receitas")'
+properties:
+  file.name:
+    displayName: Receita
+  note.refeicao:
+    displayName: Refeição
+  note.sabor_tipo:
+    displayName: Doce ou salgado
+  note.culinaria:
+    displayName: Culinária
+  note.proteina:
+    displayName: Proteína
+  note.tempo_ativo:
+    displayName: Tempo ativo
+  note.tempo_total:
+    displayName: Tempo total
+  note.avaliacao:
+    displayName: Avaliação
+  note.nota_sabor:
+    displayName: Sabor
+  note.nota_dificuldade:
+    displayName: Dificuldade
+  note.faria_de_novo:
+    displayName: Faria de novo
+  note.ultima_vez:
+    displayName: Última vez
+  note.alerta:
+    displayName: Alerta
+views:
+  - type: table
+    name: Todas
+    order:
+      - file.name
+      - refeicao
+      - sabor_tipo
+      - culinaria
+      - tempo_total
+      - avaliacao
+      - nota_sabor
+      - nota_dificuldade
+      - alerta
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: table
+    name: Por refeição
+    groupBy:
+      property: refeicao
+      direction: ASC
+    order:
+      - file.name
+      - sabor_tipo
+      - culinaria
+      - tempo_total
+      - avaliacao
+      - nota_sabor
+  - type: table
+    name: Por culinária
+    groupBy:
+      property: culinaria
+      direction: ASC
+    order:
+      - file.name
+      - refeicao
+      - tempo_total
+      - avaliacao
+      - nota_sabor
+  - type: table
+    name: Quero testar
+    filters:
+      and:
+        - 'avaliacao == "quero testar"'
+    order:
+      - file.name
+      - refeicao
+      - culinaria
+      - tempo_total
+      - alerta
+  - type: table
+    name: Aprovadas
+    filters:
+      and:
+        - 'avaliacao == "aprovada"'
+    order:
+      - file.name
+      - refeicao
+      - nota_sabor
+      - nota_dificuldade
+      - faria_de_novo
+      - ultima_vez
+    sort:
+      - property: nota_sabor
+        direction: DESC

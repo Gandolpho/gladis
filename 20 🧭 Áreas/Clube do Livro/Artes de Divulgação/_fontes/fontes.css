@@ -1,0 +1,42 @@
+@font-face {
+  font-family: 'Alfa Slab One';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(f0.woff2) format('truetype');
+}
+@font-face {
+  font-family: 'Delicious Handrawn';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(f1.woff2) format('truetype');
+}
+@font-face {
+  font-family: 'Pinyon Script';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(f2.woff2) format('truetype');
+}
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(f3.woff2) format('truetype');
+}
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(f4.woff2) format('truetype');
+}
+@font-face {
+  font-family: 'Reenie Beanie';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(f5.woff2) format('truetype');
+}

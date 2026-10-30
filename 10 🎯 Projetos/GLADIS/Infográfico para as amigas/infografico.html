@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>GLADIS para as amigas</title>
+<link href="https://fonts.googleapis.com/css2?family=Chewy&family=Pacifico&family=Nunito:wght@600;700;800;900&display=block" rel="stylesheet">
+<style>
+  :root{
+    --pink:#E8329C; --pink2:#D41F86; --magenta:#B8137A; --chiclete:#FF8FD0; --claro:#FFD6EE;
+    --roxo:#3B1166; --roxo2:#6A2C91; --lilas:#A77BFF; --texto:#2B0D45;
+    --ciano:#5FD8F5; --ciano2:#2A9ED8; --tela:#2438B0; --tela2:#4566E6;
+    --amarelo:#FFE600; --laranja:#F7931E;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#333;font-family:'Nunito',sans-serif;color:var(--texto)}
+  body.preview{display:flex;flex-direction:column;align-items:center;gap:40px;padding:40px}
+  .page{width:1080px;height:2280px;position:relative;overflow:hidden;display:flex;flex-direction:column;
+        align-items:center;padding:0 56px 120px;
+        background:
+          radial-gradient(circle at 50% 14%, rgba(255,230,250,.75), rgba(255,180,230,0) 38%),
+          repeating-conic-gradient(from 0deg at 50% 14%, #EC3AA2 0deg 6deg, #DB2A92 6deg 12deg);}
+  body.single .page{display:none}
+  body.single .page.on{display:flex}
+
+  .layer{position:absolute;inset:0;pointer-events:none}
+  .layer svg{position:absolute}
+  .content{position:relative;z-index:5;width:100%;display:flex;flex-direction:column;gap:44px;flex:1;justify-content:space-evenly}
+
+  .ads{position:absolute;z-index:8;filter:drop-shadow(0 10px 0 rgba(59,17,102,.4))} .duo img{height:130px;width:auto} .stk{position:absolute;z-index:8;
+       filter:drop-shadow(5px 0 0 #fff) drop-shadow(-5px 0 0 #fff) drop-shadow(0 5px 0 #fff) drop-shadow(0 -5px 0 #fff) drop-shadow(0 10px 0 rgba(59,17,102,.45))}
+
+  .hero{display:flex;flex-direction:column;align-items:center;padding-top:30px;position:relative}
+  .hero .ufo{width:400px;margin-bottom:-60px;position:relative;z-index:2}
+  .hero .logo{width:980px;position:relative;z-index:3}
+  .hero .sub{margin-top:-6px;position:relative;z-index:4;background:var(--roxo);color:#fff;font-weight:800;font-size:31px;
+             padding:14px 34px;border-radius:999px;text-align:center;line-height:1.3;border:5px solid var(--amarelo);
+             box-shadow:0 8px 0 var(--magenta)}
+  .mini{display:flex;align-items:center;justify-content:center;gap:10px;padding-top:30px}
+  .mini .logo{width:640px}
+  .mini .ufo{width:220px}
+
+  .panel{position:relative;background:#fff;border:7px solid var(--roxo);border-radius:44px;box-shadow:0 14px 0 var(--roxo)}
+  .bar{display:flex;align-items:center;gap:18px;padding:18px 30px 16px;border-bottom:7px solid var(--roxo);
+       border-radius:37px 37px 0 0;background:linear-gradient(180deg,#8FE6FA,var(--ciano) 45%,var(--ciano2))}
+  .bar.roxa{background:linear-gradient(180deg,#C9A8FF,var(--lilas) 45%,#7140E0)}
+  .bar.rosa{background:linear-gradient(180deg,#FFB3E0,#FF6FBF 45%,var(--pink2))}
+  .dots{display:flex;gap:9px;flex-shrink:0}
+  .dots i{width:22px;height:22px;border-radius:50%;border:4px solid var(--roxo);display:block}
+  .dots i:nth-child(1){background:var(--amarelo)} .dots i:nth-child(2){background:var(--chiclete)} .dots i:nth-child(3){background:#fff}
+  h2{font-family:'Chewy',cursive;font-weight:400;font-size:62px;line-height:1.02;color:#fff;letter-spacing:1px;
+     -webkit-text-stroke:13px var(--roxo);paint-order:stroke fill}
+  .body{padding:30px 42px 38px}
+  p{font-size:37px;line-height:1.42;font-weight:600}
+  p b{font-weight:900;color:var(--magenta)}
+  .fala{display:inline-block;background:var(--claro);border:3px solid var(--pink);border-radius:22px;padding:0 14px;font-weight:800;color:var(--roxo)}
+
+  .steps{display:flex;flex-direction:column;gap:24px}
+  .step{display:flex;gap:26px;align-items:center}
+  .step .ic{width:128px;height:128px;flex-shrink:0;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,var(--claro));
+            border:6px solid var(--roxo);position:relative;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 0 var(--pink)}
+  .step .ic svg{width:86px}
+  .step .n{position:absolute;top:-12px;left:-12px;width:54px;height:54px;border-radius:50%;background:var(--amarelo);
+           color:var(--roxo);font-family:'Chewy';font-size:38px;display:flex;align-items:center;justify-content:center;border:5px solid var(--roxo)}
+  .step p{font-size:35px}
+
+  .balao{position:relative;background:var(--amarelo);border:7px solid var(--roxo);border-radius:44px;padding:30px 42px 36px;
+         transform:rotate(-1.5deg);box-shadow:0 14px 0 var(--roxo)}
+  .balao h2{font-size:58px;margin-bottom:10px}
+  .balao .fala{background:#fff}
+
+  .duo{display:flex;gap:24px}
+  .duo > div{flex:1;background:linear-gradient(180deg,#FFF0F8,var(--claro));border:4px solid var(--pink);border-radius:30px;padding:20px 22px;
+             display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px}
+  .duo svg{width:110px}
+  .duo p{font-size:33px;line-height:1.35}
+
+  .msgs{display:flex;flex-direction:column;gap:18px}
+  .msg{background:linear-gradient(180deg,#FF8FD0,var(--pink2));border:6px solid var(--roxo);border-radius:38px;padding:11px}
+  .msg .scr{border:4px solid var(--roxo);border-radius:27px;padding:17px 26px 19px;color:#fff;font-size:33px;line-height:1.4;font-weight:700;
+            background-image:linear-gradient(rgba(255,255,255,.07) 2px,transparent 2px),linear-gradient(90deg,rgba(255,255,255,.07) 2px,transparent 2px),radial-gradient(circle at 18% 12%, var(--tela2), var(--tela) 70%);
+            background-size:34px 34px,34px 34px,auto}
+  .msg .tag{display:inline-block;background:var(--amarelo);color:var(--roxo);font-weight:900;border-radius:999px;border:3px solid var(--roxo);
+            padding:0 16px;margin-right:12px;font-size:29px;transform:translateY(-3px)}
+  .msg .scr i{font-style:normal;color:#FFC2E6}
+  .msg.futuro{background:linear-gradient(180deg,#C9A8FF,#7140E0)}
+
+  .pill{position:absolute;bottom:36px;z-index:9;background:var(--roxo);color:#fff;font-weight:900;font-size:30px;
+        padding:8px 26px;border-radius:999px;border:4px solid var(--amarelo)}
+  .pill.r{right:56px} .pill.l{left:56px;font-family:'Chewy';font-weight:400;font-size:38px;padding:4px 26px}
+</style>
+</head>
+<body class="preview">
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="flor" viewBox="-64 -64 128 128">
+      <g fill="var(--borda,#9E0F66)" transform="translate(2,4)">
+        <ellipse cx="0" cy="-31" rx="26" ry="29"/><ellipse cx="0" cy="-31" rx="26" ry="29" transform="rotate(72)"/>
+        <ellipse cx="0" cy="-31" rx="26" ry="29" transform="rotate(144)"/><ellipse cx="0" cy="-31" rx="26" ry="29" transform="rotate(216)"/>
+        <ellipse cx="0" cy="-31" rx="26" ry="29" transform="rotate(288)"/><circle r="28"/>
+      </g>
+      <g fill="currentColor">
+        <ellipse cx="0" cy="-31" rx="26" ry="29"/><ellipse cx="0" cy="-31" rx="26" ry="29" transform="rotate(72)"/>
+        <ellipse cx="0" cy="-31" rx="26" ry="29" transform="rotate(144)"/><ellipse cx="0" cy="-31" rx="26" ry="29" transform="rotate(216)"/>
+        <ellipse cx="0" cy="-31" rx="26" ry="29" transform="rotate(288)"/><circle r="28"/>
+      </g>
+      <ellipse rx="21" ry="16" transform="rotate(-20)" fill="var(--miolo,#FFE600)"/>
+    </symbol>
+    <symbol id="brilho" viewBox="-50 -50 100 100">
+      <path d="M0,-50 C4,-10 10,-4 50,0 C10,4 4,10 0,50 C-4,10 -10,4 -50,0 C-10,-4 -4,-10 0,-50Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="estrela" viewBox="-50 -50 100 100">
+      <path d="M0,-48 L13,-15 L47,-14 L20,8 L30,42 L0,22 L-30,42 L-20,8 L-47,-14 L-13,-15Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="coracao" viewBox="0 0 100 90">
+      <path d="M50,86 C10,58 0,34 14,16 C26,2 46,6 50,22 C54,6 74,2 86,16 C100,34 90,58 50,86Z" fill="currentColor" stroke="#3B1166" stroke-width="6" stroke-linejoin="round"/>
+      <path d="M22,26 Q26,16 36,14" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity=".8"/>
+    </symbol>
+    <radialGradient id="aura"><stop offset="0" stop-color="#B8F3FF" stop-opacity="1"/><stop offset="1" stop-color="#B8F3FF" stop-opacity="0"/></radialGradient>
+
+    <symbol id="ufo" viewBox="0 0 600 380">
+      <ellipse cx="300" cy="200" rx="300" ry="185" fill="url(#aura)"/>
+      <path d="M62,168 Q18,150 34,104" fill="none" stroke="#12305E" stroke-width="16" stroke-linecap="round"/>
+      <path d="M62,168 Q18,150 34,104" fill="none" stroke="#5CC6EE" stroke-width="6" stroke-linecap="round"/>
+      <path d="M538,168 Q582,150 566,104" fill="none" stroke="#12305E" stroke-width="16" stroke-linecap="round"/>
+      <path d="M538,168 Q582,150 566,104" fill="none" stroke="#5CC6EE" stroke-width="6" stroke-linecap="round"/>
+      <path d="M168,200 A132,112 0 0 0 432,200 Z" fill="#CFF4FF" stroke="#12305E" stroke-width="7" stroke-linejoin="round"/>
+      <path d="M205,236 Q240,280 290,290" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" opacity=".9"/>
+      <ellipse cx="300" cy="178" rx="252" ry="56" fill="#2E8BC9" stroke="#12305E" stroke-width="7"/>
+      <ellipse cx="300" cy="160" rx="252" ry="44" fill="#5CC6EE" stroke="#12305E" stroke-width="7"/>
+      <path d="M190,158 Q194,84 300,76 Q406,84 410,158 Q300,182 190,158Z" fill="#3FA9DC" stroke="#12305E" stroke-width="7" stroke-linejoin="round"/>
+      <path d="M222,128 Q236,98 272,90" fill="none" stroke="#B8ECFF" stroke-width="9" stroke-linecap="round"/>
+      <rect x="252" y="50" width="96" height="30" rx="12" fill="#2E8BC9" stroke="#12305E" stroke-width="6"/>
+      <rect x="281" y="12" width="38" height="42" rx="9" fill="#5CC6EE" stroke="#12305E" stroke-width="6"/>
+      <rect x="236" y="120" width="26" height="12" rx="6" fill="#FFE600"/><rect x="287" y="124" width="26" height="12" rx="6" fill="#FF8FD0"/><rect x="338" y="120" width="26" height="12" rx="6" fill="#A77BFF"/>
+      <rect x="96" y="181" width="40" height="16" rx="8" fill="#FFE600" stroke="#12305E" stroke-width="4"/>
+      <rect x="158" y="194" width="40" height="16" rx="8" fill="#FF8FD0" stroke="#12305E" stroke-width="4"/>
+      <rect x="220" y="201" width="40" height="16" rx="8" fill="#A77BFF" stroke="#12305E" stroke-width="4"/>
+      <rect x="340" y="201" width="40" height="16" rx="8" fill="#FF8FD0" stroke="#12305E" stroke-width="4"/>
+      <rect x="402" y="194" width="40" height="16" rx="8" fill="#FFE600" stroke="#12305E" stroke-width="4"/>
+      <rect x="464" y="181" width="40" height="16" rx="8" fill="#9BEBFF" stroke="#12305E" stroke-width="4"/>
+      <circle cx="300" cy="212" r="22" fill="#fff" stroke="#12305E" stroke-width="6"/><circle cx="300" cy="212" r="10" fill="#E8329C"/><circle cx="295" cy="207" r="3.5" fill="#fff"/>
+    </symbol>
+
+    <symbol id="compowder" viewBox="0 0 280 210">
+      <path d="M118,104 Q140,92 150,108" fill="none" stroke="#3B1166" stroke-width="14" stroke-linecap="round"/>
+      <path d="M118,104 Q140,92 150,108" fill="none" stroke="#FF8FD0" stroke-width="6" stroke-linecap="round"/>
+      <g transform="rotate(-14 70 110)">
+        <path d="M70,182 C14,140 0,96 26,72 C48,52 70,62 70,80 C70,62 92,52 114,72 C140,96 126,140 70,182Z" fill="#E8329C" stroke="#3B1166" stroke-width="7" stroke-linejoin="round"/>
+        <path d="M34,84 Q40,70 54,68" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".8"/>
+        <use href="#flor" x="42" y="86" width="56" height="56" style="color:#FFE600;--miolo:#F7931E;--borda:#C99A00"/>
+      </g>
+      <circle cx="200" cy="104" r="74" fill="#E8329C" stroke="#3B1166" stroke-width="7"/>
+      <circle cx="200" cy="100" r="54" fill="#2438B0" stroke="#3B1166" stroke-width="5"/>
+      <path d="M168,76 Q178,62 196,60" fill="none" stroke="#8FA4FF" stroke-width="7" stroke-linecap="round"/>
+      <use href="#brilho" x="196" y="84" width="34" height="34" style="color:#fff"/>
+      <circle cx="184" cy="166" r="5" fill="#FFE600"/><circle cx="200" cy="168" r="5" fill="#FFE600"/><circle cx="216" cy="166" r="5" fill="#FFE600"/>
+    </symbol>
+
+    <symbol id="batom" viewBox="0 0 80 200">
+      <path d="M22,18 Q40,-4 58,30 V70 H22Z" fill="#E8329C" stroke="#3B1166" stroke-width="6" stroke-linejoin="round"/>
+      <rect x="16" y="66" width="48" height="34" rx="6" fill="#FFD84A" stroke="#3B1166" stroke-width="6"/>
+      <rect x="10" y="96" width="60" height="96" rx="12" fill="#A77BFF" stroke="#3B1166" stroke-width="6"/>
+      <path d="M22,110 V176" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".7"/>
+      <circle cx="46" cy="130" r="9" fill="#5FD8F5" stroke="#3B1166" stroke-width="4"/>
+    </symbol>
+    <symbol id="oculos" viewBox="0 0 220 100">
+      <path d="M100,40 Q110,30 120,40" fill="none" stroke="#3B1166" stroke-width="8"/>
+      <use href="#coracao" x="4" y="6" width="96" height="86" style="color:#FF5FB8"/>
+      <use href="#coracao" x="118" y="6" width="96" height="86" style="color:#FF5FB8"/>
+    </symbol>
+    <symbol id="fivela" viewBox="0 0 200 100">
+      <rect x="4" y="30" width="192" height="40" rx="10" fill="#E9ECFF" stroke="#3B1166" stroke-width="6"/>
+      <rect x="60" y="10" width="80" height="80" rx="22" fill="#fff" stroke="#3B1166" stroke-width="6"/>
+      <use href="#coracao" x="70" y="22" width="60" height="54" style="color:#7A6BE6"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ================= PÁGINA 1 ================= -->
+<section class="page" id="p1" data-seed="11">
+  <div class="layer" data-deco></div>
+  <img class="ads" src="adesivo-batom.png" style="left:44px;top:50px;width:110px;transform:rotate(-16deg)">
+  <img class="ads" src="adesivo-oculos.png" style="right:30px;top:90px;width:230px;transform:rotate(12deg)">
+
+  <div class="content">
+    <div class="hero">
+      <img class="ufo" src="adesivo-ufo.png">
+      <svg class="logo" viewBox="0 0 1000 420" data-logo="big"></svg>
+      <img class="ads" src="adesivo-flor.png" style="left:0px;bottom:-40px;width:120px;transform:rotate(-14deg);z-index:6"><div class="sub">o nome vem da G.L.A.D.I.S., a assistente<br>do WOOHP em Três Espiãs Demais</div>
+    </div>
+
+    <div class="panel">
+      <div class="bar"><span class="dots"><i></i><i></i><i></i></span><h2>O que é</h2></div>
+      <div class="body">
+        <p>É uma inteligência artificial, <b>parecida com o ChatGPT</b>, que eu deixei ligada a um caderno digital com as coisas da minha vida: trabalho, tarefas, agenda, clube do livro. A diferença é que ela <b>lembra de tudo</b> de uma conversa para outra e <b>consegue fazer coisas sozinha</b>, além de responder.</p>
+      </div>
+      <img class="ads" src="adesivo-compowder.png" style="right:-34px;top:-86px;width:200px;transform:rotate(10deg)">
+    </div>
+
+    <div class="panel">
+      <div class="bar roxa"><span class="dots"><i></i><i></i><i></i></span><h2>Um HD externo para o meu cérebro</h2></div>
+      <div class="body">
+        <p>Vocês sabem que eu esqueço datas, tarefas e o que eu ia fazer cinco minutos atrás. A GLADIS funciona como uma <b>memória extra</b>. Eu jogo a informação nela e não preciso mais ficar segurando tudo na cabeça. Sobra mais tempo para pensar e menos tempo organizando.</p>
+      </div>
+      <img class="ads" src="adesivo-cerebro.png" style="right:-30px;bottom:-50px;width:230px;transform:rotate(-6deg)">
+    </div>
+  </div>
+  <div class="pill l">continua ›</div>
+  <div class="pill r">1/3</div>
+</section>
+
+<!-- ================= PÁGINA 2 ================= -->
+<section class="page" id="p2" data-seed="27">
+  <div class="layer" data-deco></div>
+  <div class="content">
+    <div class="mini">
+      <svg class="logo" viewBox="0 0 1000 420" data-logo></svg>
+      <img class="ufo" src="adesivo-ufo.png">
+    </div>
+
+    <div class="panel">
+      <div class="bar"><span class="dots"><i></i><i></i><i></i></span><h2>Como funciona</h2></div>
+      <div class="body">
+        <div class="steps">
+          <div class="step">
+            <div class="ic"><span class="n">1</span>
+              <svg viewBox="0 0 100 100"><path d="M14,18 H86 Q94,18 94,26 V62 Q94,70 86,70 H44 L24,88 L28,70 H14 Q6,70 6,62 V26 Q6,18 14,18Z" fill="#fff" stroke="#3B1166" stroke-width="6" stroke-linejoin="round"/><circle cx="30" cy="44" r="6" fill="#E8329C"/><circle cx="50" cy="44" r="6" fill="#E8329C"/><circle cx="70" cy="44" r="6" fill="#E8329C"/></svg>
+            </div>
+            <p><b>Eu falo com ela</b> normalmente, por escrito ou por áudio. <span class="fala">“Anota que preciso marcar o dentista.”</span></p>
+          </div>
+          <div class="step">
+            <div class="ic"><span class="n">2</span>
+              <svg viewBox="0 0 100 100"><path d="M8,24 Q8,18 14,18 H38 L46,28 H86 Q92,28 92,34 V78 Q92,84 86,84 H14 Q8,84 8,78Z" fill="#E8329C" stroke="#3B1166" stroke-width="6" stroke-linejoin="round"/><path d="M8,40 H92" stroke="#3B1166" stroke-width="5"/><path d="M50,72 C38,64 36,56 42,52 C46,50 50,53 50,56 C50,53 54,50 58,52 C64,56 62,64 50,72Z" fill="#fff"/></svg>
+            </div>
+            <p><b>Ela guarda no lugar certo</b>, cada assunto na sua pasta.</p>
+          </div>
+          <div class="step">
+            <div class="ic"><span class="n">3</span>
+              <svg viewBox="0 0 100 100"><path d="M50,12 Q26,14 24,44 Q24,62 12,72 H88 Q76,62 76,44 Q74,14 50,12Z" fill="#FFE600" stroke="#3B1166" stroke-width="6" stroke-linejoin="round"/><circle cx="50" cy="82" r="9" fill="#E8329C" stroke="#3B1166" stroke-width="5"/><path d="M36,34 Q38,24 46,22" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/></svg>
+            </div>
+            <p><b>Quando eu preciso</b>, ela me lembra ou faz a tarefa por mim.</p>
+          </div>
+        </div>
+      </div>
+      <img class="ads" src="adesivo-fivela.png" style="right:-30px;top:-64px;width:230px;transform:rotate(10deg)">
+    </div>
+
+    <div class="balao">
+      <h2>Serve para qualquer pessoa?</h2>
+      <p>Serve. Ter memória ruim ajuda a sentir a falta, mas a graça está em pedir e ela resolver, para qualquer um. Você fala <span class="fala">“guarda isso”</span> ou <span class="fala">“organiza aquilo”</span> e ela faz do jeito que você combinou com ela.</p>
+      <img class="ads" src="adesivo-flor.png" style="right:-34px;bottom:-56px;width:140px;transform:rotate(12deg)">
+    </div>
+
+    <div class="panel">
+      <div class="bar rosa"><span class="dots"><i></i><i></i><i></i></span><h2>Um exemplo de agora: o Natal do clube</h2></div>
+      <div class="body">
+        <p>Estou usando a GLADIS para organizar o <b>presente de Natal do clube</b>. Ela calcula quanto vai custar cada item e guarda as ideias que vão surgindo, para eu não perder nada. A ideia é, aos poucos, colocar tudo do clube lá dentro para ela me ajudar a organizar.</p>
+      </div>
+      <img class="ads" src="adesivo-presente.png" style="right:-26px;bottom:-60px;width:180px;transform:rotate(-8deg)">
+    </div>
+  </div>
+  <div class="pill l">continua ›</div>
+  <div class="pill r">2/3</div>
+</section>
+
+<!-- ================= PÁGINA 3 ================= -->
+<section class="page" id="p3" data-seed="43">
+  <div class="layer" data-deco></div>
+  <div class="content">
+    <div class="mini">
+      <img class="ufo" src="adesivo-ufo.png">
+      <svg class="logo" viewBox="0 0 1000 420" data-logo></svg>
+    </div>
+
+    <div class="panel">
+      <div class="bar roxa"><span class="dots"><i></i><i></i><i></i></span><h2>Coisas que eu quero ensinar para ela</h2></div>
+      <div class="body">
+        <div class="duo">
+          <div>
+            <img src="adesivo-presente.png">
+            <p>Do que cada pessoa gosta e as <b>ideias de presente</b> que eu tive ao longo do ano</p>
+          </div>
+          <div>
+            <img src="adesivo-panela.png">
+            <p>Minhas <b>receitas</b> e o que tem na despensa, para planejar a comida</p>
+          </div>
+        </div>
+      </div>
+      <img class="ads" src="adesivo-batom.png" style="left:-36px;top:-100px;width:100px;transform:rotate(-18deg)">
+    </div>
+
+    <div class="panel">
+      <div class="bar rosa"><span class="dots"><i></i><i></i><i></i></span><h2>Um dia com a GLADIS</h2></div>
+      <div class="body">
+        <div class="msgs">
+          <div class="msg"><div class="scr"><span class="tag">De manhã</span>ela olha minha agenda e minhas tarefas e monta meu dia</div></div>
+          <div class="msg"><div class="scr"><span class="tag">No trabalho</span>organiza os projetos e me diz qual o primeiro passo quando eu travo</div></div>
+          <div class="msg"><div class="scr"><span class="tag">Durante o dia</span>eu lembro de algo e falo <i>“anota isso”</i>, e ela guarda</div></div>
+          <div class="msg"><div class="scr"><span class="tag">Quando eu travo</span>pergunto <i>“o que eu faço agora?”</i> e ela sugere uma coisa só</div></div>
+          <div class="msg futuro"><div class="scr"><span class="tag">No futuro</span><i>“a Fulana faz aniversário semana que vem, e em março você pensou em dar tal livro para ela”</i></div></div>
+        </div>
+      </div>
+      <img class="ads" src="adesivo-compowder.png" style="right:-36px;top:-96px;width:220px;transform:rotate(10deg)">
+    </div>
+  </div>
+  <div class="pill r">3/3</div><img class="ads" src="adesivo-oculos.png" style="left:56px;bottom:20px;width:200px;transform:rotate(-8deg);z-index:9">
+</section>
+
+<script>
+  // Logo no estilo do desenho: palavra cursiva em cima (como o "Totally") e GLADIS amarelo com faixa roxa e borda laranja (como o "Spies!")
+  function logo(svg, big){
+    const g = [];
+    if (big) {
+      [['#F7931E',40],['#6A2C91',26],['#fff',0]].forEach(([c,w]) => g.push(
+        `<text x="330" y="150" text-anchor="middle" font-family="Pacifico" font-size="88" transform="rotate(-6 360 90)"
+          fill="${c}" stroke="${w ? c : 'none'}" stroke-width="${w}" stroke-linejoin="round" paint-order="stroke">Conheçam a</text>`));
+    }
+    // logo gerado no ChatGPT (fundo recortado em logo-gladis.png)
+    const w = big ? 900 : 1000, h = Math.round(w * 864 / 1821);
+    svg.setAttribute('viewBox', big ? `0 0 1000 ${h + 60}` : `0 0 1000 ${h}`);
+    g.unshift(`<image href="logo-gladis.png" x="${big ? 50 : 0}" y="${big ? 60 : 0}" width="${w}" height="${h}"/>`);
+    svg.innerHTML = g.join('');
+  }
+  document.querySelectorAll('[data-logo]').forEach(s => logo(s, s.dataset.logo === 'big'));
+
+  document.querySelectorAll('[data-cerebro]').forEach(s => s.innerHTML = `
+    <g stroke="#3B1166" stroke-width="14" fill="#3B1166"><circle cx="70" cy="105" r="48"/><circle cx="118" cy="70" r="50"/><circle cx="168" cy="98" r="46"/><circle cx="96" cy="148" r="44"/><circle cx="148" cy="148" r="44"/></g>
+    <g fill="#FF8FD0"><circle cx="70" cy="105" r="48"/><circle cx="118" cy="70" r="50"/><circle cx="168" cy="98" r="46"/><circle cx="96" cy="148" r="44"/><circle cx="148" cy="148" r="44"/></g>
+    <g fill="none" stroke="#E8329C" stroke-width="7" stroke-linecap="round"><path d="M60,90 Q78,70 96,88"/><path d="M118,40 Q132,58 116,74"/><path d="M160,70 Q184,86 170,108"/><path d="M70,150 Q86,166 104,152"/></g>
+    <circle cx="104" cy="118" r="8" fill="#3B1166"/><circle cx="142" cy="118" r="8" fill="#3B1166"/>
+    <path d="M110,136 Q123,150 136,136" fill="none" stroke="#3B1166" stroke-width="6" stroke-linecap="round"/>
+    <ellipse cx="92" cy="136" rx="10" ry="6" fill="#E8329C" opacity=".6"/><ellipse cx="154" cy="136" rx="10" ry="6" fill="#E8329C" opacity=".6"/>
+    <path d="M205,140 C245,200 265,70 300,128" fill="none" stroke="#3B1166" stroke-width="9" stroke-linecap="round"/>
+    <rect x="296" y="66" width="104" height="128" rx="20" fill="#E8329C" stroke="#3B1166" stroke-width="7"/>
+    <rect x="310" y="80" width="76" height="84" rx="12" fill="#FF8FD0"/>
+    <path d="M348,145 C322,128 318,108 332,101 C341,97 348,103 348,110 C348,103 355,97 364,101 C378,108 374,128 348,145Z" fill="#fff"/>
+    <circle cx="330" cy="178" r="6" fill="#5FD8F5"/><rect x="344" y="174" width="40" height="8" rx="4" fill="#3B1166" opacity=".5"/>`);
+
+  // Fundo maximalista com posições fixas (semente), para sair igual em toda exportação
+  function rng(seed){ return () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed);
+    t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+  document.querySelectorAll('.page').forEach(page => {
+    const r = rng(+page.dataset.seed), L = page.querySelector('[data-deco]'), out = [];
+    
+    const put = (sym, x, y, w, style, rot) =>
+      out.push(`<svg style="left:${x}px;top:${y}px;width:${w}px;height:${w}px;transform:rotate(${rot}deg);${style}" viewBox="0 0 100 100"><use href="#${sym}" width="100" height="100"/></svg>`);
+    for (let i=0;i<14;i++) put('flor', r()*1180-150, r()*2400-150, 200+r()*240, 'color:#C4167F;--borda:transparent;--miolo:#D24A9B;opacity:.45', r()*360);
+    for (let i=0;i<16;i++){ const left = r()<.5; put('flor', left ? -60+r()*120 : 900+r()*120, r()*2280-40, 90+r()*120,
+      'color:#E8248A;--borda:#9E0F66;--miolo:#FFE600', r()*360); }
+    for (let i=0;i<12;i++) put('flor', r()*1040, r()*2240, 44+r()*40, r()<.5 ? 'color:#fff;--borda:#C4167F;--miolo:#E8329C' : 'color:#FFE600;--borda:#C99A00;--miolo:#F7931E', r()*360);
+    for (let i=0;i<14;i++) put('estrela', r()*1040, r()*2240, 30+r()*50, r()<.6 ? 'color:#FFE600' : 'color:rgba(255,255,255,.75)', r()*60-30);
+    for (let i=0;i<40;i++) put('brilho', r()*1060, r()*2260, 16+r()*46, 'color:#fff;opacity:'+(0.55+r()*0.45), 0);
+    for (let i=0;i<6;i++) put('coracao', r()*1040, r()*2240, 40+r()*30, 'color:#FF8FD0', r()*40-20);
+    L.innerHTML = out.join('');
+  });
+
+  const n = location.hash.replace('#','');
+  if (n) { document.body.className = 'single'; document.getElementById('p' + n).classList.add('on'); }
+</script>
+</body>
+</html>

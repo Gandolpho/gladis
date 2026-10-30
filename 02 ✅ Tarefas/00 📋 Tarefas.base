@@ -1,0 +1,169 @@
+filters:
+  and:
+    - file.inFolder("GLADIS/02 ✅ Tarefas")
+    - tipo == "tarefa"
+formulas:
+  status: if(feita, "✅ feita", if(prazo && prazo < today(), "⚠️ atrasada", if(fazendo, "🔄 fazendo", "a fazer")))
+properties:
+  file.name:
+    displayName: Tarefa
+  formula.status:
+    displayName: Status
+  note.feita:
+    displayName: Feita
+  note.fazendo:
+    displayName: Fazendo
+  note.urgente:
+    displayName: Urgente
+  note.categoria:
+    displayName: Categoria
+  note.projeto:
+    displayName: Projeto
+  note.energia:
+    displayName: Energia
+  note.prazo:
+    displayName: Prazo
+  note.fazer_em:
+    displayName: Planejada para
+  note.rapida:
+    displayName: Rápida
+  note.concluida_em:
+    displayName: Concluída em
+views:
+  - type: table
+    name: A fazer
+    filters:
+      and:
+        - feita != true
+    order:
+      - feita
+      - fazendo
+      - file.name
+      - formula.status
+      - urgente
+      - categoria
+      - projeto
+      - energia
+      - prazo
+      - fazer_em
+    sort:
+      - property: urgente
+        direction: DESC
+      - property: prazo
+        direction: ASC
+  - type: table
+    name: Principais
+    filters:
+      and:
+        - principal == true
+        - or:
+            - and:
+                - feita != true
+                - fazer_em <= today()
+            - and:
+                - feita == true
+                - file.mtime >= today()
+    order:
+      - feita
+      - fazendo
+      - file.name
+      - formula.status
+      - projeto
+      - energia
+    sort:
+      - property: feita
+        direction: ASC
+      - property: urgente
+        direction: DESC
+    columnSize:
+      note.feita: 76
+      note.fazendo: 84
+      file.name: 240
+      formula.status: 92
+      note.projeto: 130
+      note.energia: 72
+  - type: table
+    name: Outras de hoje
+    filters:
+      and:
+        - principal != true
+        - rapida != true
+        - or:
+            - and:
+                - feita != true
+                - fazer_em <= today()
+            - and:
+                - feita == true
+                - file.mtime >= today()
+    order:
+      - feita
+      - fazendo
+      - file.name
+      - formula.status
+      - categoria
+      - energia
+    sort:
+      - property: feita
+        direction: ASC
+      - property: urgente
+        direction: DESC
+    columnSize:
+      note.feita: 76
+      note.fazendo: 84
+      file.name: 240
+      formula.status: 92
+      note.categoria: 110
+      note.energia: 72
+  - type: table
+    name: Esta semana
+    filters:
+      and:
+        - feita != true
+        - prazo <= today() + "7d"
+    order:
+      - feita
+      - file.name
+      - formula.status
+      - prazo
+      - projeto
+      - energia
+    sort:
+      - property: prazo
+        direction: ASC
+  - type: table
+    name: Por projeto
+    filters:
+      and:
+        - feita != true
+    groupBy:
+      property: projeto
+      direction: ASC
+    order:
+      - feita
+      - file.name
+      - formula.status
+      - energia
+      - prazo
+  - type: table
+    name: Rápidas
+    filters:
+      and:
+        - rapida == true
+        - feita != true
+    order:
+      - feita
+      - file.name
+      - categoria
+  - type: table
+    name: Feitas
+    filters:
+      and:
+        - feita == true
+    order:
+      - file.name
+      - concluida_em
+      - categoria
+      - projeto
+    sort:
+      - property: file.mtime
+        direction: DESC

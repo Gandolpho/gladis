@@ -1,0 +1,4 @@
+- [Relembrar as referências da Trama](feedback-relembrar-referencias-trama.md) — citar e abrir 07, 08, 09 e 12 em toda conversa sobre a identidade visual
+- [Cor e elementos da Trama](feedback-cor-e-elementos-trama.md) — chiclete é destaque, não dominante; elementos com direção de arte, não todos em toda arte
+- [Site da marca da Trama](project-site-marca-trama.md) — como o site é gerado e publicado, e o limite de downloads do Artifact
+- [Geração de artes da Trama](project-geracao-artes-trama.md) — Claude, ChatGPT e Canva; 7 famílias de layout

@@ -28,6 +28,9 @@ Criar a nova identidade visual do [[Clube do Livro]], conduzida como projeto de 
 - [ ] 8 · Kit para as meninas das redes
 - [ ] 9 · Design system no Claude Design
 
+## Arquivos no Drive
+Os elementos da marca (imagens) ficam também no Google Drive, para abrir no celular e em outro computador: [pasta da Trama do Rio - Marca](https://drive.google.com/drive/folders/1jY-BERrtjgcg-52NOilLnnJeiBIAOXYb?usp=sharing). Upload ainda em andamento em 2026-10-31. Os originais seguem em `3 Núcleo da marca/` e `Referências/`.
+
 ## Briefing
 _Respostas registradas com data, rodada a rodada._
 
